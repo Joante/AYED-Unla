@@ -14,20 +14,21 @@ Pre: no debe haber sido creada
 
 Post: Devuelve una caja de contenido X y capacidad maxima = capacidad actual, dependiendo la secuencia de dicho contenido.
 
-recibe la caja, el contenido y la secuencia de dicho contenido.
+recibe la caja, el contenido y la secuencia actual
+(capacidad de la caja) de dicho contenido.
 
 */
-void crear(Caja &caja,);
+void crear(Caja &caja, string contenido, int secuenciaActual);
 
 
 /*
 Pre: la caja debe haber sido creada
 
-Post: se elimina la caja, devuelve true si fue exitoso, false si hubo algun error
+Post: se elimina la caja
 
 recibe la instancia de caja a ser eliminada
 */
-bool eliminar(Caja &caja);
+void eliminar(Caja &caja);
 
 
 /*
@@ -62,6 +63,9 @@ Pre: la caja debe haber sido creada
 
 post se resta a la capacidad actual de la caja el valor de menos, se devuelve el valor resultante, se actualiza el valor de "capacidad actual" de dicha caja por el resultado.
 se recomienda eliminar todas las cajas de capActual 0
+
+
+
 
 */
 int restarContenido(Caja &caja, int menos);
