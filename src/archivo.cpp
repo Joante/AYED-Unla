@@ -73,34 +73,43 @@ void getListaMina(ArchivoGral &archivoGral, Mina* listaMina){
 }
 
 
-void getIntervaloSegundos(ArchivoGral &archivoGral, float* segundos){
+void getIntervaloSegundos(ArchivoGral &archivoGral, float &segundos){
+    segundos = archivoGral.parametro.segundosIntervalo;
 }
 
 
-void getPosicionEstacion(ArchivoGral &archivoGral,int* posX, int* posY){
+void getPosicionEstacion(ArchivoGral &archivoGral,int& posX, int& posY){
+    posX = archivoGral.parametro.posXEstacion;
+    posY = archivoGral.parametro.posYEstacion;
 }
 
 
-void getAreaBandido(ArchivoGral &archivoGral,int* area){
+void getAreaBandido(ArchivoGral &archivoGral,int& area){
+    area = archivoGral.parametro.AreaDeBandido;
 }
 
 
-void getIntervaloBandido(ArchivoGral &archivoGral,int* intervalo){
+void getIntervaloBandido(ArchivoGral &archivoGral,int& intervalo){
+    intervalo = archivoGral.parametro.intervaloBandido;
 }
 
 
-void getVidaBandido(ArchivoGral &archivoGral,int* vida){
+void getVidaBandido(ArchivoGral &archivoGral,int& vida){
+    vida = archivoGral.parametro.vidaBandido;
 }
 
 
-void getPillageBandido(ArchivoGral &archivoGral,int* pillage){
+void getPillageBandido(ArchivoGral &archivoGral,int& pillage){
+    pillage = archivoGral.parametro.pillageMax;
 }
 
 
-void getIntervaloMoneda(ArchivoGral &archivoGral,int* intervalo){
+void getIntervaloMoneda(ArchivoGral &archivoGral,int& intervalo){
+    intervalo = archivoGral.parametro.intervaloMoneda;
 }
 
 
-void getVidaMoneda(ArchivoGral &archivoGral,int* vida){
+void getVidaMoneda(ArchivoGral &archivoGral,int& vida){
+    vida =  archivoGral.parametro.vidaMoneda;
 }
 

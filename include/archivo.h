@@ -78,7 +78,7 @@ Post: se devuelve la cantidad de segundos
 entre intervalos
 */
 
-void getIntervaloSegundos(ArchivoGral &archivoGral, float* segundos);
+void getIntervaloSegundos(ArchivoGral &archivoGral, float& segundos);
 
 /*
 Pre: ArchivoGral debe haber sido creado.
@@ -89,7 +89,7 @@ recibe el archivo, y dos punteros a enteros donde almacenar las posiciones
 de x e y
 */
 
-void getPosicionEstacion(ArchivoGral &archivoGral,int* posX, int* posY);
+void getPosicionEstacion(ArchivoGral &archivoGral,int& posX, int& posY);
 
 /*
 Pre: ArchivoGral debe haber sido creado.
@@ -99,7 +99,7 @@ Post: se devuelve el area de ataque del bandido
 recibe un puntero a int
 */
 
-void getAreaBandido(ArchivoGral &archivoGral,int* area);
+void getAreaBandido(ArchivoGral &archivoGral,int& area);
 
 /*
 Pre: ArchivoGral debe haber sido creado.
@@ -109,7 +109,7 @@ Post: se devuelve el intervalo de creacion del bandido
 recibe un puntero a int
 */
 
-void getIntervaloBandido(ArchivoGral &archivoGral,int* intervalo);
+void getIntervaloBandido(ArchivoGral &archivoGral,int& intervalo);
 
 /*
 Pre: ArchivoGral debe haber sido creado.
@@ -119,7 +119,7 @@ Post: se devuelve la vida maxima del bandido
 recibe un puntero a int
 */
 
-void getVidaBandido(ArchivoGral &archivoGral,int* vida);
+void getVidaBandido(ArchivoGral &archivoGral,int& vida);
 
 
 /*
@@ -131,7 +131,7 @@ al robar
 recibe un puntero a int
 */
 
-void getPillageBandido(ArchivoGral &archivoGral,int* pillage);
+void getPillageBandido(ArchivoGral &archivoGral,int& pillage);
 
 /*
 Pre: ArchivoGral debe haber sido creado.
@@ -141,7 +141,7 @@ Post: se devuelve el intervalo de creacion de Moneda
 recibe un puntero a int
 */
 
-void getIntervaloMoneda(ArchivoGral &archivoGral,int* intervalo);
+void getIntervaloMoneda(ArchivoGral &archivoGral,int& intervalo);
 
 /*
 Pre: ArchivoGral debe haber sido creado.
@@ -151,6 +151,6 @@ Post: se devuelve la vida maxima de moneda
 recibe un puntero a int
 */
 
-void getVidaMoneda(ArchivoGral &archivoGral,int* vida);
+void getVidaMoneda(ArchivoGral &archivoGral,int& vida);
 
 #endif // ARCHIVO_H
