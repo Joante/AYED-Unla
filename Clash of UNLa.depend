@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1557768401 source:c:\users\mariano\documents\github\ayed-unla\main.cpp
+	<iostream>
+
+1558640619 source:c:\users\mariano\documents\github\ayed-unla\archivo.cpp
+	"archivo.h"
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<sstream>
+
+1558591993 c:\users\mariano\documents\github\ayed-unla\archivo.h
+	<string>
+
+1558670053 source:c:\users\mariano\documents\github\ayed-unla\caja.cpp
+	"caja.h"
+	<string>
+
+1558669923 c:\users\mariano\documents\github\ayed-unla\caja.h
+	<string>
+

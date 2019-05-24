@@ -1,9 +1,10 @@
 #ifndef CAJA_H
 #define CAJA_H
+#include <string>
 
 
 typedef struct{
-    string contenido;   //Que material contiene la caja, es necesario???
+    std::string contenido;   //Que material contiene la caja, es necesario???
     int capMax;         //Capacidad maxima de la caja dada por la secuencia
     int capActual;      //Para utilizar luego al ser robado etc
 }Caja;
@@ -18,7 +19,7 @@ recibe la caja, el contenido y la secuencia actual
 (capacidad de la caja) de dicho contenido.
 
 */
-void crear(Caja &caja, string contenido, int secuenciaActual);
+void crear(Caja &caja, std::string contenido, int secuenciaActual);
 
 
 /*
@@ -38,7 +39,7 @@ Post: Se devuelve el tipo de contenido de la caja
 
 recibe la caja
 */
-string getContenido(Caja &caja);
+std::string getContenido(Caja &caja);
 
 
 /*

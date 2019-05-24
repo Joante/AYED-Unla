@@ -1,16 +1,22 @@
 #ifndef ARCHIVO_H
 #define ARCHIVO_H
+#include <string>
+
+
+
+
+
 
 typedef struct Parametro{
-    string segundosIntervalo;
-    string pillageMax;
-    string AreaDeBandido;
-    string posXEstacion;
-    string posYEstacion;
-    string intervaloMoneda;
-    string vidaMoneda;
-    string intervaloBandido;
-    string vidaBandido;
+    int segundosIntervalo;
+    int pillageMax;
+    int AreaDeBandido;
+    int posXEstacion;
+    int posYEstacion;
+    int intervaloMoneda;
+    int vidaMoneda;
+    int intervaloBandido;
+    int vidaBandido;
 };
 
 typedef struct Comanda{
@@ -26,16 +32,21 @@ typedef struct Comanda{
 typedef struct Mina {
     int posX;
     int posY;
-    string codItem;
+    std::string codItem;
     int intervaloProduccion;
     int listaSecuencia[5];
+};
+
+struct Nodo{
+    Mina dato;
+    Nodo* siguiente;
 };
 
 
 typedef struct ArchivoGral{
     Parametro parametro;
     Comanda comanda;
-    Mina* listaMina;
+    Nodo* listaMina;    //juro que es provisorio
 };
 
 
@@ -69,7 +80,7 @@ Pre: ArchivoGral debe haber sido creado.
 Post: se devuelve una lista conteniendo todas las minas.
 */
 
-void getListaMina(ArchivoGral &archivoGral, Mina* listaMina);
+void getListaMina(ArchivoGral &archivoGral, Nodo* listaMina);
 
 /*
 Pre: ArchivoGral debe haber sido creado.
@@ -78,7 +89,7 @@ Post: se devuelve la cantidad de segundos
 entre intervalos
 */
 
-void getIntervaloSegundos(ArchivoGral &archivoGral, float& segundos);
+void getIntervaloSegundos(ArchivoGral &archivoGral, int& segundos);
 
 /*
 Pre: ArchivoGral debe haber sido creado.
@@ -152,5 +163,17 @@ recibe un puntero a int
 */
 
 void getVidaMoneda(ArchivoGral &archivoGral,int& vida);
+
+
+/*
+Pre: ArchivoGral debe haber sido creado.
+
+Post: se devuelve la comanda del item seleccionado
+
+recibe el archivoGral, un int y un string con el nombre de la comanda a obtener
+*/
+
+void getComandaDe(ArchivoGral &archivoGral, int& com, string nombre);
+
 
 #endif // ARCHIVO_H

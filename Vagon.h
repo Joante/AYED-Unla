@@ -1,6 +1,6 @@
 #ifndef VAGON_H_INCLUDED
 #define VAGON_H_INCLUDED
-#include"Pila.h"
+//#include "Pila.h"
 /**
     Definicion del Tipo de Dato para manejo de Vagones.
     Atributos:

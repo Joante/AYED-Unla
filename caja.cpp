@@ -1,17 +1,19 @@
 #include "caja.h"
+#include <string>
 
 
-void crear(Caja &caja, string contenido, int secuenciaActual){
+
+void crear(Caja &caja, std::string contenido, int secuenciaActual){
     caja.contenido = contenido;
     caja.capMax = secuenciaActual;
     caja.capActual = caja.capMax;
 }
 
 void eliminar(Caja &caja){
-    delete caja;
+    //???;
 }
 
-string getContenido(Caja &caja){
+std::string getContenido(Caja &caja){
     return caja.contenido;
 }
 
