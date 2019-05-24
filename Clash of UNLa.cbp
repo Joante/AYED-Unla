@@ -32,9 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="estacion.h" />
+		<Unit filename="include/Vagon.h" />
+		<Unit filename="include/archivo.h" />
+		<Unit filename="include/caja.h" />
+		<Unit filename="include/estacion.h" />
+		<Unit filename="include/moneda.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="moneda.h" />
+		<Unit filename="src/Vagon.cpp" />
+		<Unit filename="src/archivo.cpp" />
+		<Unit filename="src/caja.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

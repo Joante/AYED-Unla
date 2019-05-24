@@ -1,0 +1,10 @@
+S=2
+P=2
+A=3
+posXE=5
+posXE=9
+IM=10
+VM=30
+IB=30
+VB=7
+IP=15
