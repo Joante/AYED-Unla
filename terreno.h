@@ -50,7 +50,7 @@ void eliminar (Terreno &terreno);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int getEstado (Terreno &terreno);
+bool getEstado (Terreno &terreno);
 
 
 /**
@@ -59,7 +59,7 @@ int getEstado (Terreno &terreno);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int setEstado (Terreno &terreno, bool estado);
+void setEstado (Terreno &terreno, bool estado);
 
 /**
     PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado la Locomotora mediante setLocomotora().
@@ -67,7 +67,7 @@ int setEstado (Terreno &terreno, bool estado);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int getLocomotora (Terreno &terreno);
+Locomotora getLocomotora (Terreno &terreno);
 
 
 /**
@@ -76,7 +76,7 @@ int getLocomotora (Terreno &terreno);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int setLocomotora (Terreno &terreno, Locomotora locomotora);
+void setLocomotora (Terreno &terreno, Locomotora locomotora);
 
 /**
     PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado la ListaMinas mediante setListaMinas().
@@ -84,7 +84,7 @@ int setLocomotora (Terreno &terreno, Locomotora locomotora);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int getListaMinas (Terreno &terreno);
+ListaMinas getListaMinas (Terreno &terreno);
 
 
 /**
@@ -93,7 +93,7 @@ int getListaMinas (Terreno &terreno);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int setListaMinas (Terreno &terreno, ListaMinas listaMinas);
+void setListaMinas (Terreno &terreno, ListaMinas listaMinas);
 
 /**
     PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado la ListaMonedas mediante setListaMonedas().
@@ -101,7 +101,7 @@ int setListaMinas (Terreno &terreno, ListaMinas listaMinas);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int getListaMonedas (Terreno &terreno);
+ListaMonedas getListaMonedas (Terreno &terreno);
 
 
 /**
@@ -110,7 +110,7 @@ int getListaMonedas (Terreno &terreno);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int setListaMonedas (Terreno &terreno, ListaMonedas listaMonedas);
+void setListaMonedas (Terreno &terreno, ListaMonedas listaMonedas);
 
 /**
     PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado la ListaBandidos mediante setListaBandidos().
@@ -118,7 +118,7 @@ int setListaMonedas (Terreno &terreno, ListaMonedas listaMonedas);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int getListaBandidos (Terreno &terreno);
+ListaBandidos getListaBandidos (Terreno &terreno);
 
 
 /**
@@ -127,7 +127,7 @@ int getListaBandidos (Terreno &terreno);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int setListaBandidos (Terreno &terreno, ListaBandidos listaBandidos);
+void setListaBandidos (Terreno &terreno, ListaBandidos listaBandidos);
 
 /**
     PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado la Estacion mediante setEstacion().
@@ -135,7 +135,7 @@ int setListaBandidos (Terreno &terreno, ListaBandidos listaBandidos);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int getEstacion (Terreno &terreno);
+Estacion getEstacion (Terreno &terreno);
 
 
 /**
@@ -144,7 +144,7 @@ int getEstacion (Terreno &terreno);
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
 
-int setEstacion (Terreno &terreno, Estacion estacion);
+void setEstacion (Terreno &terreno, Estacion estacion);
 
 
 
