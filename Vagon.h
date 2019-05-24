@@ -66,7 +66,7 @@ void setEstado(Vagon &vagon, bool estado);
 /** PRE: Vagon creado con crearVagon()
     POST: Delvuelve el dato contenido en el campo  estado
 */
-int getEstado(Vagon &vagon);
+bool getEstado(Vagon &vagon);
 
 /** PRE: Vagon creado con crearVagon()
     POST: El campo pesoMax pasa a tener el dato ingresado
@@ -96,7 +96,7 @@ void setItem(Vagon &vagon, Item item);
 /** PRE: Vagon creado con crearVagon()
     POST: Delvuelve el dato contenido en el campo  item
 */
-int getItem(Vagon &vagon);
+Item getItem(Vagon &vagon);
 
 /** PRE: Vagon creado con crearVagon()
     POST: El campo cajas pasa a tener el dato ingresado
@@ -106,6 +106,6 @@ void setCajas(Vagon &vagon, Pila cajas);
 /** PRE: Vagon creado con crearVagon()
     POST: Delvuelve el dato contenido en el campo  cajas
 */
-int getCajas(Vagon &vagon);
+Pila getCajas(Vagon &vagon);
 
 #endif // VAGON_H_INCLUDED

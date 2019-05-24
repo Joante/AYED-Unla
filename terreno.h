@@ -1,5 +1,6 @@
 #ifndef TERRENO_H_INCLUDED
 #define TERRENO_H_INCLUDED
+#include "SDL.h"
 /**
     Definición del tipo Tipo de Dato para el manejo de el terreno.
     Atributos:
@@ -23,6 +24,7 @@ typedef struct Terreno{
     ListaMonedas listaMonedas;
     ListaBandidos listaBandidos;
     Estacion estacion;
+    SDL_Texture *imagen;
 } Terreno;
 
 /* Definición de Primitivas  */
@@ -43,12 +45,19 @@ void crear (Terreno &terreno);
 
 void eliminar (Terreno &terreno);
 
+/**
+    PRE: Se debe de haber creado el terreno mediante crear().
+    POST: Se dibuja el terreno en la pantalla.
+    Terreno: Instancia sobre el cual se invoca a la primitiva.
+*/
+void dibujarTerreno(ListaTerreno &ListaTerrenos, SDL_Renderer* renderer);
 
 /**
     PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado el Estado mediante setEstado().
     POST: Se devuelve el estado del terreno.
     Terreno: Instacia sobre el cual se invoca a la primitiva
 */
+
 
 bool getEstado (Terreno &terreno);
 
@@ -145,9 +154,5 @@ Estacion getEstacion (Terreno &terreno);
 */
 
 void setEstacion (Terreno &terreno, Estacion estacion);
-
-
-
-
 
 #endif // TERRENO_H_INCLUDED

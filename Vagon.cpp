@@ -48,7 +48,7 @@ void setItem(Vagon &vagon, Item item)
     vagon.item=item;
 }
 
-int getItem(Vagon &vagon)
+Item getItem(Vagon &vagon)
 {
     return vagon.item;
 }
