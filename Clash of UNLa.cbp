@@ -32,15 +32,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/Vagon.h" />
-		<Unit filename="include/archivo.h" />
-		<Unit filename="include/caja.h" />
-		<Unit filename="include/estacion.h" />
-		<Unit filename="include/moneda.h" />
+		<Unit filename="Clash of UNLa.depend" />
+		<Unit filename="Clash of UNLa.layout" />
+		<Unit filename="estacion.cpp" />
+		<Unit filename="estacion.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Vagon.cpp" />
-		<Unit filename="src/archivo.cpp" />
-		<Unit filename="src/caja.cpp" />
+		<Unit filename="moneda.cpp" />
+		<Unit filename="moneda.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -26,28 +26,28 @@ typedef struct
 /* PRE: La estación no debe haber sido creada.
    POST: La estación esta creada y lista para ser usada. */
 
-void crear (estacion &Estacion);
+void crear (Estacion &estacion);
 
 /* PRE: La estación debe haber sido creada mediante crear().
    POST: La estación es eliminada.
 
    estacion: Instacia sobre la cual se invoca a la primitiva */
 
-void eliminar (estacion &Estacion);
+void eliminar (Estacion &estacion);
 
 /* PRE: La estación debe haber sido creada mediante crear().
    POST: Se devuelve la posición en X de la estación
 
    estacion: Instacia sobre la cual se invoca a la primitiva*/
 
-int getPosXE (estacion &Estacion);
+int getPosXE (Estacion &estacion);
 
 /* PRE: La estación debe haber sido creada mediante crear().
    POST: Se devuelve la posición en Y de la estación
 
    estacion: Instacia sobre la cual se invoca a la primitiva*/
 
-int getPosYE (estacion &Estacion);
+int getPosYE (Estacion &estacion);
 
 /* PRE: La estación debe haber sido creada mediante crear().
    POST: El campo posXE de la estación se modifica por el valor pasado por parametro.
@@ -55,7 +55,7 @@ int getPosYE (estacion &Estacion);
    estacion: Instacia sobre la cual se invoca a la primitiva.
    posXE: Valor pasado por parametro. Nueva posicion en X. */
 
-void setPosXE (estacion &Estacion, int posXE);
+void setPosXE (Estacion &estacion, int posXE);
 
 /* PRE: La estación debe haber sido creada mediante crear().
    POST: El campo posYE de la estación se modifica por el valor pasado por parametro.
@@ -63,8 +63,9 @@ void setPosXE (estacion &Estacion, int posXE);
    estacion: Instacia sobre la cual se invoca a la primitiva.
    posYE: Valor pasado por parametro. Nueva posicion en Y. */
 
-void setPosYE (estacion &Estacion, int posYE);
+void setPosYE (Estacion &estacion, int posYE);
 
 /* ? */
 
 void agregarVagon ();
+#endif

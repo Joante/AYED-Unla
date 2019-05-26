@@ -1,3 +1,6 @@
+#include <SDL.h>
+#include <SDL_image.h>
+
 #ifndef MONEDA_H_INCLUDED
 #define MONEDA_H_INCLUDED
 
@@ -21,6 +24,11 @@ typedef struct
     int posX;
     int posY;
     int tiempoVida;
+    int anchoCasillero;
+    int altoCasillero;
+    SDL_Texture *imagen;
+    SDL_Rect rectImag;
+
 
 }Moneda;
 
@@ -29,35 +37,40 @@ typedef struct
 /* PRE: La moneda no debe haber sido creada.
    POST: La moneda esta creada y lista para ser usada. */
 
-void crear (moneda &Moneda);
+void crear (Moneda &moneda, int posX, int posY, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
+
+/* PRE: La moneda debe haber sido creada.
+   POST: La moneda se visualiza por pantalla*/
+
+void dibujar(Moneda &moneda, SDL_Renderer* renderer);
 
 /* PRE: La moneda debe haber sido creada mediante crear().
    POST: La moneda es eliminada.
 
    moneda: Instacia sobre la cual se invoca a la primitiva */
 
-void eliminar (moneda &Moneda);
+void eliminar (Moneda &moneda);
 
 /* PRE: La moneda debe haber sido creada mediante crear().
    POST: Se devuelve la posición en X de la moneda
 
    moneda: Instacia sobre la cual se invoca a la primitiva*/
 
-int getPosX (moneda &Moneda);
+int getPosX (Moneda &moneda);
 
 /* PRE: La moneda debe haber sido creada mediante crear().
    POST: Se devuelve la posición en Y de la moneda
 
    moneda: Instacia sobre la cual se invoca a la primitiva*/
 
-int getPosY (moneda &Moneda);
+int getPosY (Moneda &moneda);
 
 /* PRE: La moneda debe haber sido creada mediante crear().
    POST: Se devuelve el tiempo de vida de la moneda.
 
    moneda: Instacia sobre la cual se invoca a la primitiva*/
 
-int getTiempoVida (moneda &Moneda);
+int getTiempoVida (Moneda &moneda);
 
 /* PRE: La moneda debe haber sido creada mediante crear().
    POST: El campo tiempoVida de la moneda se modifica por el valor pasado por parametro.
@@ -66,7 +79,7 @@ int getTiempoVida (moneda &Moneda);
    tiempoVida: Valor pasado por parametro.*/
 
 
-void setTiempoVida (moneda &Moneda, int tiempoVida);
+void setTiempoVida (Moneda &moneda, int tiempoVida);
 
 /* PRE: La moneda debe haber sido creada mediante crear().
    POST: El campo posX de la moneda se modifica por el valor pasado por parametro.
@@ -75,7 +88,7 @@ void setTiempoVida (moneda &Moneda, int tiempoVida);
    posX: Valor pasado por parametro. Nueva posicion en X. */
 
 
-void setPosX (moneda &Moneda, int posX);
+void setPosX (Moneda &moneda, int posX);
 
 /* PRE: La moneda debe haber sido creada mediante crear().
    POST: El campo posY de la moneda se modifica por el valor pasado por parametro.
@@ -83,7 +96,7 @@ void setPosX (moneda &Moneda, int posX);
    moneda: Instacia sobre la cual se invoca a la primitiva.
    posY: Valor pasado por parametro. Nueva posicion en Y. */
 
-void setPosY (moneda &Moneda, int posY);
+void setPosY (Moneda &moneda, int posY);
 
 /* PRE: La moneda debe haber sido creada mediante crear().
    POST: La moneda es generada durante un intervalo de tiempo aleatorio en un lugar aleatorio.
@@ -91,8 +104,9 @@ void setPosY (moneda &Moneda, int posY);
    moneda: Instacia sobre la cual se invoca a la primitiva.
 */
 
-void generarMoneda (moneda &Moneda);
+void generarMoneda (Moneda &moneda);
 
 /* ? */
 
 void sumarMoneda ();
+#endif
