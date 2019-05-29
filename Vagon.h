@@ -1,6 +1,7 @@
 #ifndef VAGON_H_INCLUDED
 #define VAGON_H_INCLUDED
 #include"Pila.h"
+#include"SDL.h"
 /**
     Definicion del Tipo de Dato para manejo de Vagones.
     Atributos:
@@ -17,7 +18,8 @@
 
 */
 /** Tipo de Enumerado Item */
-enum Item{
+enum Item
+{
     oro,
     plata,
     bronce,
@@ -27,21 +29,30 @@ enum Item{
 };
 /** Tipo de Estructura del Vagon */
 
-typedef struct Vagon{
-        int id;
-        bool estado;
-        int pesoMax;
-        int pesoUtilizado;
-        Item item;
-        Pila cajas;
-        };
+typedef struct Vagon
+{
+    int id;
+    bool estado;
+    int pesoMax;
+    int pesoUtilizado;
+    Item item;
+    Pila cajas;
+    int x1,y1;
+    int f;
+    int c;
+    int anchoCasillero;
+    int altoCasillero;
+    SDL_Texture *imagen;
+    SDL_Rect rectImag;
+
+};
 
 /** PRE: El vagon no debe haber sido creado
     POST: El vagon queda creado y preparado para ser utilizado,
     vagon.id=1;
     vagon.estado=true;
 */
-void crearVagon(Vagon &vagon);
+void constructorVagon(Vagon &vagon);
 
 /** PRE: Vagon creado con crearVagon()
     POST: El vagon es eliminado
@@ -66,7 +77,7 @@ void setEstado(Vagon &vagon, bool estado);
 /** PRE: Vagon creado con crearVagon()
     POST: Delvuelve el dato contenido en el campo  estado
 */
-bool getEstado(Vagon &vagon);
+int getEstado(Vagon &vagon);
 
 /** PRE: Vagon creado con crearVagon()
     POST: El campo pesoMax pasa a tener el dato ingresado
@@ -96,7 +107,7 @@ void setItem(Vagon &vagon, Item item);
 /** PRE: Vagon creado con crearVagon()
     POST: Delvuelve el dato contenido en el campo  item
 */
-Item getItem(Vagon &vagon);
+int getItem(Vagon &vagon);
 
 /** PRE: Vagon creado con crearVagon()
     POST: El campo cajas pasa a tener el dato ingresado
@@ -106,6 +117,12 @@ void setCajas(Vagon &vagon, Pila cajas);
 /** PRE: Vagon creado con crearVagon()
     POST: Delvuelve el dato contenido en el campo  cajas
 */
-Pila getCajas(Vagon &vagon);
+int getCajas(Vagon &vagon);
+
+void crearVagon(Vagon &vagon, int f, int c, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
+
+void dibujarVagon(Vagon &vagon, SDL_Renderer* renderer);
+
+void destruirVagon(Vagon &vagon);
 
 #endif // VAGON_H_INCLUDED
