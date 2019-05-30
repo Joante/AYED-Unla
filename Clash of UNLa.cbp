@@ -33,8 +33,12 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="estacion.h" />
+		<Unit filename="locomotora.cpp" />
+		<Unit filename="locomotora.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="moneda.h" />
+		<Unit filename="pantalla.cpp" />
+		<Unit filename="pantalla.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

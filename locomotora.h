@@ -32,7 +32,7 @@ typedef struct
 /* PRE: La locomotora no debe haber sido creada.
    POST: La locomotora esta creada y lista para ser usada. */
 
-void crear (locomotora &Locomotora);
+void crear (Locomotora &locomotora);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -40,7 +40,7 @@ void crear (locomotora &Locomotora);
 
    locomotora: Instacia sobre la cual se invoca a la primitiva */
 
-void eliminar (locomotora &Locomotora);
+void eliminar (Locomotora &locomotora);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -48,7 +48,7 @@ void eliminar (locomotora &Locomotora);
 
    locomotora: Instacia sobre la cual se invoca a la primitiva*/
 
-int getPosX (locomotora &Locomotora);
+int getPosX (Locomotora &locomotora);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -56,7 +56,7 @@ int getPosX (locomotora &Locomotora);
 
    locomotora: Instacia sobre la cual se invoca a la primitiva*/
 
-int getPosY (locomotora &Locomotora);
+int getPosY (Locomotora &locomotora);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -64,7 +64,7 @@ int getPosY (locomotora &Locomotora);
 
    locomotora: Instacia sobre la cual se invoca a la primitiva*/
 
-int getMonedas (locomotora &Locomotora);
+int getMonedas (Locomotora &locomotora);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -72,10 +72,10 @@ int getMonedas (locomotora &Locomotora);
 
    locomotora: Instacia sobre la cual se invoca a la primitiva*/
 
-bool getEstado (locomotora &Locomotora);
+bool getEstado (Locomotora &locomotora);
 
 
-//ListaVagon getListaVagones (locomotora &Locomotora)-- falta implementacion de lista vagones
+//ListaVagon getListaVagones (Locomotora &locomotora)-- falta implementacion de lista vagones
 
 
 
@@ -85,7 +85,7 @@ bool getEstado (locomotora &Locomotora);
    locomotora: Instacia sobre la cual se invoca a la primitiva.
    monedas: Valor pasado por parametro.*/
 
-void setMonedas (locomotora &Locomotora, int tiempoVida);
+void setMonedas (Locomotora &locomotora, int tiempoVida);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -94,7 +94,7 @@ void setMonedas (locomotora &Locomotora, int tiempoVida);
    locomotora: Instacia sobre la cual se invoca a la primitiva.
    posX: Valor pasado por parametro. Nueva posicion en X. */
 
-void setPosX (locomotora &Locomotora, int posX);
+void setPosX (Locomotora &locomotora, int posX);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -103,7 +103,7 @@ void setPosX (locomotora &Locomotora, int posX);
    locomotora: Instacia sobre la cual se invoca a la primitiva.
    posY: Valor pasado por parametro. Nueva posicion en Y. */
 
-void setPosY (locomotora &Locomotora, int posY);
+void setPosY (Locomotora &locomotora, int posY);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -112,11 +112,11 @@ void setPosY (locomotora &Locomotora, int posY);
    locomotora: Instacia sobre la cual se invoca a la primitiva.
    posX: Valor pasado por parametro.  */
 
-void setEstado (locomotora &Locomotora, bool estado);
+void setEstado (Locomotora &locomotora, bool estado);
 
 
 
-//void setListaVagones (ListaVagones lista, locomotora &Locomotora)-- falta implementacion de lista vagones
+//void setListaVagones (ListaVagones lista, Locomotora &locomotora)-- falta implementacion de lista vagones
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -125,7 +125,7 @@ void setEstado (locomotora &Locomotora, bool estado);
    locomotora: Instacia sobre la cual se invoca a la primitiva.
    evento: librería SDL, representa el estímulo exterior de perifericos, en este caso sera la presion de teclas
 */
-void moverse (locomotora &Locomotora, SDL_Event evento);
+void moverse (Locomotora &locomotora, SDL_Event evento);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -134,7 +134,7 @@ void moverse (locomotora &Locomotora, SDL_Event evento);
    locomotora: Instacia sobre la cual se invoca a la primitiva.
    evento: librería SDL, representa el estímulo exterior de perifericos, en este caso sera la presion de teclas
 */
-void pararLocomotora (locomotora &Locomotora, SDL_Event evento);
+void pararLocomotora (Locomotora &locomotora, SDL_Event evento);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -142,7 +142,7 @@ void pararLocomotora (locomotora &Locomotora, SDL_Event evento);
 
    locomotora: Instacia sobre la cual se invoca a la primitiva.
 */
-void colisionVagones (locomotora &Locomotora);
+void colisionVagones (Locomotora &locomotora);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -150,4 +150,4 @@ void colisionVagones (locomotora &Locomotora);
 
    locomotora: Instacia sobre la cual se invoca a la primitiva.
 */
-void colisionVagones (locomotora &Locomotora);
+void colisionVagones (Locomotora &locomotora);
