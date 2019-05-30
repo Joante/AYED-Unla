@@ -1,6 +1,9 @@
+#include <iostream>
+#include <SDL.h>
+#include <SDL_image.h>
 #ifndef LOCOMOTORA_H_INCLUDED
 #define LOCOMOTORA_H_INCLUDED
-
+#endif
 /*
 Definición del tipo Tipo de Dato para el manejo de la Locomotora.
 Atributos:
@@ -23,6 +26,12 @@ typedef struct
     int posX;
     int posY;
     int monedas;
+    int anchoCasillero;
+    int altoCasillero;
+    int direccion;
+    SDL_Texture *imagen;
+    SDL_Rect rectImag;
+
 //falta la implementacion de lista para la lista de vagones
 }Locomotora;
 
@@ -32,7 +41,7 @@ typedef struct
 /* PRE: La locomotora no debe haber sido creada.
    POST: La locomotora esta creada y lista para ser usada. */
 
-void crear (Locomotora &locomotora);
+//void crear (Locomotora &locomotora);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -40,7 +49,7 @@ void crear (Locomotora &locomotora);
 
    locomotora: Instacia sobre la cual se invoca a la primitiva */
 
-void eliminar (Locomotora &locomotora);
+//void eliminar (Locomotora &locomotora);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -64,7 +73,7 @@ int getPosY (Locomotora &locomotora);
 
    locomotora: Instacia sobre la cual se invoca a la primitiva*/
 
-int getMonedas (Locomotora &locomotora);
+//int getMonedas (Locomotora &locomotora);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -85,7 +94,7 @@ bool getEstado (Locomotora &locomotora);
    locomotora: Instacia sobre la cual se invoca a la primitiva.
    monedas: Valor pasado por parametro.*/
 
-void setMonedas (Locomotora &locomotora, int tiempoVida);
+//void setMonedas (Locomotora &locomotora, int tiempoVida);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -120,21 +129,12 @@ void setEstado (Locomotora &locomotora, bool estado);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
-   POST: La locomotora cambia su ubicacion en la grilla de terreno segun la direccion correspondiente.
-
-   locomotora: Instacia sobre la cual se invoca a la primitiva.
-   evento: librería SDL, representa el estímulo exterior de perifericos, en este caso sera la presion de teclas
-*/
-void moverse (Locomotora &locomotora, SDL_Event evento);
-
-
-/* PRE: La locomotora debe haber sido creada mediante crear().
    POST: La locomotora frena al haber chocado contra una mina, la estacion, un bandido o los limites del terreno.
 
    locomotora: Instacia sobre la cual se invoca a la primitiva.
    evento: librería SDL, representa el estímulo exterior de perifericos, en este caso sera la presion de teclas
 */
-void pararLocomotora (Locomotora &locomotora, SDL_Event evento);
+//void pararLocomotora (Locomotora &locomotora, SDL_Event evento);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -142,7 +142,7 @@ void pararLocomotora (Locomotora &locomotora, SDL_Event evento);
 
    locomotora: Instacia sobre la cual se invoca a la primitiva.
 */
-void colisionVagones (Locomotora &locomotora);
+//void colisionVagones (Locomotora &locomotora);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -150,4 +150,40 @@ void colisionVagones (Locomotora &locomotora);
 
    locomotora: Instacia sobre la cual se invoca a la primitiva.
 */
-void colisionVagones (Locomotora &locomotora);
+void colisionLimites (Locomotora &locomotora);
+
+
+/* PRE: La locomotora no debe haber sido creada.
+   POST: La locomotora esta creada y lista para ser usada.
+*/
+void crearLocomotora(Locomotora &locomotora, int f, int c, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
+
+
+/* PRE: La locomotora debe haber sido creada mediante crearLocomotora().
+   POST: Se dibuja en pantalla la locomotora
+
+   locomotora: Instacia sobre la cual se invoca a la primitiva.
+*/
+void dibujarLocomotora(Locomotora &locomotora, SDL_Renderer* renderer);
+
+
+/* PRE: La locomotora debe haber sido creada mediante crear().
+   POST: La locomotora es eliminada.
+
+   locomotora: Instacia sobre la cual se invoca a la primitiva */
+
+void destruirLocomotora(Locomotora &locomotora);
+
+void moverLocomotora(Locomotora &locomotora, SDL_Renderer* renderer,  int intervalo);
+
+void direccionarLocomotora(Locomotora &locomotora, SDL_Event evento);
+
+
+
+void moverLocomotoraALaDerecha(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo);
+
+void moverLocomotoraALaIzquierda(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo);
+
+void moverLocomotoraAAbajo(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo);
+
+void moverLocomotoraAArriba(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo);

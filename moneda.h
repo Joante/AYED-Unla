@@ -1,5 +1,6 @@
 #ifndef MONEDA_H_INCLUDED
 #define MONEDA_H_INCLUDED
+#endif
 
 /*
 Definición del tipo Tipo de Dato para el manejo de la Moneda.

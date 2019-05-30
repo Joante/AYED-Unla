@@ -1,6 +1,6 @@
 #ifndef ESTACION_H_INCLUDED
 #define ESTACION_H_INCLUDED
-
+#endif
 /*
 Definición del tipo Tipo de Dato para el manejo de la Estación.
 Atributos:

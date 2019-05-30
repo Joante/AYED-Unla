@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1559189453 source:c:\users\julieta\documents\github\ayed-unla\locomotora.cpp
+	"locomotora.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<cstring>
+	<iostream>
+	<stdio.h>
+	<cmath>
+	<iomanip>
+
+1559189562 c:\users\julieta\documents\github\ayed-unla\locomotora.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1559189562 source:c:\users\julieta\documents\github\ayed-unla\main.cpp
+	"locomotora.h"
+	"terreno.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<iostream>
+	<math.h>
+
+1559189453 c:\users\julieta\documents\github\ayed-unla\terreno.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
