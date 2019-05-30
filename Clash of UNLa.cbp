@@ -39,6 +39,8 @@
 		<Unit filename="moneda.h" />
 		<Unit filename="pantalla.cpp" />
 		<Unit filename="pantalla.h" />
+		<Unit filename="terreno.cpp" />
+		<Unit filename="terreno.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

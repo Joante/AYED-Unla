@@ -27,9 +27,9 @@ int main(int argc, char** argv)
         SDL_Event event;
         int typeEvent;
 
-        window = SDL_CreateWindow("Ejemplo Juego Locomotora", SDL_WINDOWPOS_CENTERED,
-        SDL_WINDOWPOS_CENTERED, anchoVentana, altoVentana,
-        SDL_WINDOW_RESIZABLE | SDL_RENDERER_PRESENTVSYNC);
+        window = SDL_CreateWindow("Clash of UNLa", SDL_WINDOWPOS_CENTERED,
+                                  SDL_WINDOWPOS_CENTERED, anchoVentana, altoVentana,
+                                  SDL_WINDOW_RESIZABLE | SDL_RENDERER_PRESENTVSYNC);
         renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
 
         IMG_Init(IMG_INIT_PNG);
@@ -68,20 +68,20 @@ int main(int argc, char** argv)
             }
 
             SDL_RenderClear(renderer);
-               //borro el renderer
-        moverLocomotora(locomotora, renderer, subIntervalo);
-        dibujarTerreno(terreno,renderer);
-        dibujarLocomotora(locomotora,renderer);
+            //borro el renderer
+            moverLocomotora(locomotora, renderer, subIntervalo);
+            dibujarTerreno(terreno,renderer);
+            dibujarLocomotora(locomotora,renderer);
 
-                    SDL_RenderPresent(renderer);
+            SDL_RenderPresent(renderer);
 //                       }
-        subIntervalo++;
-        SDL_Delay(50);//milisegundos
-        std::cout <<"\n( DIBUJADO X:" << locomotora.rectImag.x << " DIBUJADO Y:" << locomotora.rectImag.y <<")  \n";
-    }
+            subIntervalo++;
+            SDL_Delay(50);//milisegundos
+            std::cout <<"\n( DIBUJADO X:" << locomotora.rectImag.x << " DIBUJADO Y:" << locomotora.rectImag.y <<")  \n";
+        }
 
-    SDL_ShowSimpleMessageBox(
-        SDL_MESSAGEBOX_INFORMATION,
+        SDL_ShowSimpleMessageBox(
+            SDL_MESSAGEBOX_INFORMATION,
             "Fin del juego",
             "perdiste :(",
             NULL);

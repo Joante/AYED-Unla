@@ -16,7 +16,7 @@
 	<SDL.h>
 	<SDL_image.h>
 
-1559189562 source:c:\users\julieta\documents\github\ayed-unla\main.cpp
+1559189983 source:c:\users\julieta\documents\github\ayed-unla\main.cpp
 	"locomotora.h"
 	"terreno.h"
 	<iostream>
@@ -26,6 +26,20 @@
 	<math.h>
 
 1559189453 c:\users\julieta\documents\github\ayed-unla\terreno.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1558302307 source:c:\users\julieta\documents\github\ayed-unla\pantalla.cpp
+	"pantalla.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1559189668 c:\users\julieta\documents\github\ayed-unla\pantalla.h
+
+1559189453 source:c:\users\julieta\documents\github\ayed-unla\terreno.cpp
+	"terreno.h"
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
