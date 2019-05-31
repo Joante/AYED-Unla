@@ -65,8 +65,42 @@ bool getEstado(Locomotora &locomotora)
     return locomotora.estado;
 }
 
+int getDireccion (Locomotora &locomotora){
+return locomotora.direccion;}
 
-void direccionarLocomotora(Locomotora &locomotora, SDL_Event evento)
+SDL_Rect getRectImag (Locomotora &locomotora){
+return locomotora.rectImag;}
+
+void setDireccion (Locomotora &locomotora, int direccion){
+    locomotora.direccion=direccion;
+}
+
+void setRectImag (Locomotora &locomotora, SDL_Rect imagen){
+}
+
+void reubicarLocomotora(Locomotora &locomotora, Vagon &vagon){
+
+    vagon.posX=locomotora.posX;
+    vagon.posY=locomotora.posY;
+    vagon.rectImag.x= vagon.posX*40;
+    vagon.rectImag.y= vagon.posY*40;
+
+        if (locomotora.direccion==0)
+            locomotora.posY++;
+
+        if (locomotora.direccion==1)
+            locomotora.posY--;
+
+        if (locomotora.direccion==2)
+            locomotora.posX++;
+
+        if(locomotora.direccion==3)
+           locomotora.posX--;
+
+        colisionLimites(locomotora);
+}
+
+int direccionarLocomotora(Locomotora &locomotora, SDL_Event evento)
 {
     /*
     abajo 0
@@ -74,23 +108,28 @@ void direccionarLocomotora(Locomotora &locomotora, SDL_Event evento)
     derecha 2
     izquierda 3
     */
+
+    int direccion1=0;
+
     const unsigned char *keys = SDL_GetKeyboardState(NULL);
     if (keys[SDL_SCANCODE_UP]&& locomotora.direccion!=0)
     {
-        locomotora.direccion=1;
+        direccion1=1;
     }
     else if (keys[SDL_SCANCODE_DOWN] && locomotora.direccion!=1)
     {
-        locomotora.direccion=0;
+        direccion1=0;
     }
     else if (keys[SDL_SCANCODE_RIGHT]&& locomotora.direccion!=3)
     {
-        locomotora.direccion=2;
+        direccion1=2;
     }
     else if (keys[SDL_SCANCODE_LEFT]&& locomotora.direccion!=2)
     {
-        locomotora.direccion=3;
+        direccion1=3;
     }
+    std::cout << "direccion 1: " << direccion1 << "\n";
+    return direccion1;
 }
 
 void moverLocomotora(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo)
@@ -123,7 +162,7 @@ void moverLocomotora(Locomotora &locomotora, SDL_Renderer* renderer, int interva
         moverLocomotoraALaIzquierda(locomotora,  renderer,  intervalo);
     }
     std::cout <<"\n( X:" << locomotora.posX << " Y:" << locomotora.posY <<")  \n";
-    colisionLimites(locomotora);
+
 
 }
 
@@ -137,9 +176,7 @@ void moverLocomotoraALaDerecha(Locomotora &locomotora, SDL_Renderer* renderer, i
     sprintf(integer_string, "%d", intervalo);
     strcat (urlImagen,integer_string);
     strcat (urlImagen,".png");
-
     locomotora.imagen= IMG_LoadTexture(renderer,urlImagen);
-    locomotora.posX= (locomotora.rectImag.x +40) /40;
 }
 
 void moverLocomotoraALaIzquierda(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo) //izquierda
@@ -152,11 +189,7 @@ void moverLocomotoraALaIzquierda(Locomotora &locomotora, SDL_Renderer* renderer,
     sprintf(integer_string, "%d", intervalo);
     strcat (urlImagen,integer_string);
     strcat (urlImagen,".png");
-
     locomotora.imagen= IMG_LoadTexture(renderer,urlImagen);
-    float posicion = (locomotora.rectImag.x)/40.0;
-
-    locomotora.posX=floor(posicion);
 }
 
 void moverLocomotoraAAbajo(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo)
@@ -170,9 +203,7 @@ void moverLocomotoraAAbajo(Locomotora &locomotora, SDL_Renderer* renderer, int i
     sprintf(integer_string, "%d", intervalo);
     strcat (urlImagen,integer_string);
     strcat (urlImagen,".png");
-
     locomotora.imagen= IMG_LoadTexture(renderer,urlImagen);
-    locomotora.posY=(locomotora.rectImag.y +40) / 40;
 }
 
 void moverLocomotoraAArriba(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo) //arriba
@@ -185,10 +216,7 @@ void moverLocomotoraAArriba(Locomotora &locomotora, SDL_Renderer* renderer, int 
     sprintf(integer_string, "%d", intervalo);
     strcat (urlImagen,integer_string);
     strcat (urlImagen,".png");
-
     locomotora.imagen= IMG_LoadTexture(renderer,urlImagen);
-    float posicion = locomotora.rectImag.y/40.0;
-    locomotora.posY= floor(posicion);
 }
 
 void colisionLimites (Locomotora &locomotora)

@@ -3,7 +3,7 @@
 #include <SDL_image.h>
 #ifndef LOCOMOTORA_H_INCLUDED
 #define LOCOMOTORA_H_INCLUDED
-#endif
+#include "Vagon.h"
 /*
 Definición del tipo Tipo de Dato para el manejo de la Locomotora.
 Atributos:
@@ -80,9 +80,17 @@ int getPosY (Locomotora &locomotora);
    POST: Se devuelve el estado de la locomotora.
 
    locomotora: Instacia sobre la cual se invoca a la primitiva*/
+int getDireccion (Locomotora &locomotora);
+
+SDL_Rect getRectImag (Locomotora &locomotora);
 
 bool getEstado (Locomotora &locomotora);
 
+void setDireccion (Locomotora &locomotora, int direccion);
+
+void setRectImag (Locomotora &locomotora, SDL_Rect imagen);
+
+void reubicarLocomotora(Locomotora &locomotora, Vagon &vagon);
 
 //ListaVagon getListaVagones (Locomotora &locomotora)-- falta implementacion de lista vagones
 
@@ -176,7 +184,7 @@ void destruirLocomotora(Locomotora &locomotora);
 
 void moverLocomotora(Locomotora &locomotora, SDL_Renderer* renderer,  int intervalo);
 
-void direccionarLocomotora(Locomotora &locomotora, SDL_Event evento);
+int direccionarLocomotora(Locomotora &locomotora, SDL_Event evento);
 
 
 
@@ -187,3 +195,5 @@ void moverLocomotoraALaIzquierda(Locomotora &locomotora, SDL_Renderer* renderer,
 void moverLocomotoraAAbajo(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo);
 
 void moverLocomotoraAArriba(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo);
+
+#endif

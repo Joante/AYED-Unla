@@ -1,6 +1,6 @@
 #ifndef ESTACION_H_INCLUDED
 #define ESTACION_H_INCLUDED
-#endif
+
 /*
 Definición del tipo Tipo de Dato para el manejo de la Estación.
 Atributos:
@@ -23,7 +23,7 @@ typedef struct
 
 /* Definición de Primitivas  */
 
-/* PRE: La estación no debe haber sido creada.
+/* PRE: La estación no debe haber sido creada.#endif
    POST: La estación esta creada y lista para ser usada. */
 
 void crear (estacion &Estacion);
@@ -68,3 +68,5 @@ void setPosYE (estacion &Estacion, int posYE);
 /* ? */
 
 void agregarVagon ();
+
+#endif

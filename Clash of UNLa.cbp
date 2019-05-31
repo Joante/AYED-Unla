@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Lista.cpp" />
+		<Unit filename="Lista.h" />
+		<Unit filename="Vagon.cpp" />
+		<Unit filename="Vagon.h" />
 		<Unit filename="estacion.h" />
 		<Unit filename="locomotora.cpp" />
 		<Unit filename="locomotora.h" />
