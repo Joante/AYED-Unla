@@ -1,23 +1,73 @@
 # depslib dependency file v1.0
-1557768401 source:c:\users\mariano\documents\github\ayed-unla\main.cpp
+1559282131 source:c:\users\julieta\documents\github\ayed-unla\locomotora.cpp
+	"locomotora.h"
 	<iostream>
-
-1558640619 source:c:\users\mariano\documents\github\ayed-unla\archivo.cpp
-	"archivo.h"
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<cstring>
 	<iostream>
-	<fstream>
 	<stdio.h>
-	<stdlib.h>
-	<string>
-	<sstream>
+	<cmath>
+	<iomanip>
 
-1558591993 c:\users\mariano\documents\github\ayed-unla\archivo.h
-	<string>
+1559281959 c:\users\julieta\documents\github\ayed-unla\locomotora.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"Vagon.h"
 
-1558670053 source:c:\users\mariano\documents\github\ayed-unla\caja.cpp
-	"caja.h"
-	<string>
+1559281910 source:c:\users\julieta\documents\github\ayed-unla\main.cpp
+	"locomotora.h"
+	"vagon.h"
+	"terreno.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<iostream>
+	<math.h>
 
-1558669923 c:\users\mariano\documents\github\ayed-unla\caja.h
+1559189453 c:\users\julieta\documents\github\ayed-unla\terreno.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1558302307 source:c:\users\julieta\documents\github\ayed-unla\pantalla.cpp
+	"pantalla.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1559189668 c:\users\julieta\documents\github\ayed-unla\pantalla.h
+
+1559189453 source:c:\users\julieta\documents\github\ayed-unla\terreno.cpp
+	"terreno.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1559191619 source:c:\users\julieta\documents\github\ayed-unla\lista.cpp
+	"Lista.h"
+
+1559191619 c:\users\julieta\documents\github\ayed-unla\lista.h
+
+1559281850 source:c:\users\julieta\documents\github\ayed-unla\vagon.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"Vagon.h"
+	"Vagon.h"
+	<SDL.h>
+	<SDL_image.h>
 	<string>
+	<cstring>
+	<iostream>
+	<stdio.h>
+	<cmath>
+	<iomanip>
+
+1559281881 c:\users\julieta\documents\github\ayed-unla\vagon.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
 

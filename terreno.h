@@ -1,158 +1,37 @@
-#ifndef TERRENO_H_INCLUDED
-#define TERRENO_H_INCLUDED
-#include "SDL.h"
-/**
-    Definición del tipo Tipo de Dato para el manejo de el terreno.
-    Atributos:
-        bool estado;
-        Locomotora locomotora;
-        ListaMinas listaMinas;
-        ListaMonedas listaMonedas;
-        ListaBandidos listaBandidos;
-        Estacion estacion;
+#include <iostream>
+#include <SDL.h>
+#include <SDL_image.h>
 
-    Axiomas:
-
-*/
-
-/* Tipo de estructura de el terreno */
-
-typedef struct Terreno{
+typedef struct
+{
     bool estado;
-    Locomotora locomotora;
-    ListaMinas listaMinas;
-    ListaMonedas listaMonedas;
-    ListaBandidos listaBandidos;
-    Estacion estacion;
+    int posX;
+    int posY;
+    int anchoCasillero;
+    int altoCasillero;
     SDL_Texture *imagen;
-} Terreno;
+    SDL_Rect rectImag;
 
-/* Definición de Primitivas  */
+//falta la implementacion de lista para la lista de vagones
+}Terreno;
 
-/**
-    PRE: El terreno no debe haber sido creado.
-    POST: El terreno esta creado y listo para ser usado.
+/* PRE: La Terreno no debe haber sido creada.
+   POST: La Terreno esta creada y lista para ser usada.
 */
+void crearTerreno(Terreno &terreno, int f, int c, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
 
-void crear (Terreno &terreno);
 
+/* PRE: La Terreno debe haber sido creada mediante crearTerreno().
+   POST: Se dibuja en pantalla la Terreno
 
-/**
-    PRE: El terreno debe haber sido creado mediante crear().
-    POST: El terreno es eliminado.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
+   Terreno: Instacia sobre la cual se invoca a la primitiva.
 */
-
-void eliminar (Terreno &terreno);
-
-/**
-    PRE: Se debe de haber creado el terreno mediante crear().
-    POST: Se dibuja el terreno en la pantalla.
-    Terreno: Instancia sobre el cual se invoca a la primitiva.
-*/
-void dibujarTerreno(ListaTerreno &ListaTerrenos, SDL_Renderer* renderer);
-
-/**
-    PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado el Estado mediante setEstado().
-    POST: Se devuelve el estado del terreno.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
+void dibujarTerreno(Terreno &terreno, SDL_Renderer* renderer);
 
 
-bool getEstado (Terreno &terreno);
+/* PRE: La Terreno debe haber sido creada mediante crear().
+   POST: La Terreno es eliminada.
 
+   Terreno: Instacia sobre la cual se invoca a la primitiva */
 
-/**
-    PRE: El terreno debe haber sido creado mediante crear().
-    POST: Se setea el estado del terreno.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
-
-void setEstado (Terreno &terreno, bool estado);
-
-/**
-    PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado la Locomotora mediante setLocomotora().
-    POST: Se devuelve la instancia de Locomotora.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
-
-Locomotora getLocomotora (Terreno &terreno);
-
-
-/**
-    PRE: El terreno debe haber sido creado mediante crear().
-    POST: Se setea la Locomotora del terreno.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
-
-void setLocomotora (Terreno &terreno, Locomotora locomotora);
-
-/**
-    PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado la ListaMinas mediante setListaMinas().
-    POST: Se devuelve la lista de minas del terreno.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
-
-ListaMinas getListaMinas (Terreno &terreno);
-
-
-/**
-    PRE: El terreno debe haber sido creado mediante crear().
-    POST: Se setea la ListaMinas del terreno.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
-
-void setListaMinas (Terreno &terreno, ListaMinas listaMinas);
-
-/**
-    PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado la ListaMonedas mediante setListaMonedas().
-    POST: Se devuelve la ListaMinas del terreno.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
-
-ListaMonedas getListaMonedas (Terreno &terreno);
-
-
-/**
-    PRE: El terreno debe haber sido creado mediante crear().
-    POST: Se setea la ListaMonedas del terreno.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
-
-void setListaMonedas (Terreno &terreno, ListaMonedas listaMonedas);
-
-/**
-    PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado la ListaBandidos mediante setListaBandidos().
-    POST: Se devuelve la ListaBandidos del terreno.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
-
-ListaBandidos getListaBandidos (Terreno &terreno);
-
-
-/**
-    PRE: El terreno debe haber sido creado mediante crear().
-    POST: Se setea la ListaBandidos del terreno.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
-
-void setListaBandidos (Terreno &terreno, ListaBandidos listaBandidos);
-
-/**
-    PRE: El terreno debe haber sido creado mediante crear(), y se debe de haber seteado la Estacion mediante setEstacion().
-    POST: Se devuelve la Estacion del terreno.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
-
-Estacion getEstacion (Terreno &terreno);
-
-
-/**
-    PRE: El terreno debe haber sido creado mediante crear().
-    POST: Se setea la Estacion del terreno.
-    Terreno: Instacia sobre el cual se invoca a la primitiva
-*/
-
-void setEstacion (Terreno &terreno, Estacion estacion);
-
-#endif // TERRENO_H_INCLUDED
+void destruirTerreno(Terreno &terreno);

@@ -4,6 +4,7 @@
 #ifndef MONEDA_H_INCLUDED
 #define MONEDA_H_INCLUDED
 
+
 /*
 Definición del tipo Tipo de Dato para el manejo de la Moneda.
 Atributos:
@@ -109,4 +110,5 @@ void generarMoneda (Moneda &moneda);
 /* ? */
 
 void sumarMoneda ();
+
 #endif

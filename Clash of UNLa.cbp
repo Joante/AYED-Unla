@@ -32,13 +32,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Clash of UNLa.depend" />
-		<Unit filename="Clash of UNLa.layout" />
-		<Unit filename="estacion.cpp" />
+		<Unit filename="Lista.cpp" />
+		<Unit filename="Lista.h" />
+		<Unit filename="Vagon.cpp" />
+		<Unit filename="Vagon.h" />
 		<Unit filename="estacion.h" />
+		<Unit filename="locomotora.cpp" />
+		<Unit filename="locomotora.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="moneda.cpp" />
 		<Unit filename="moneda.h" />
+		<Unit filename="pantalla.cpp" />
+		<Unit filename="pantalla.h" />
+		<Unit filename="terreno.cpp" />
+		<Unit filename="terreno.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

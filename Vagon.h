@@ -1,7 +1,9 @@
-#ifndef VAGON_H_INCLUDED
-#define VAGON_H_INCLUDED
-#include"Pila.h"
-#include"SDL.h"
+#include <iostream>
+#include <SDL.h>
+#include <SDL_image.h>
+
+#ifndef VAGON_H
+#define VAGON_H
 /**
     Definicion del Tipo de Dato para manejo de Vagones.
     Atributos:
@@ -36,16 +38,16 @@ typedef struct Vagon
     int pesoMax;
     int pesoUtilizado;
     Item item;
-    Pila cajas;
-    int x1,y1;
-    int f;
-    int c;
+    int posX;
+    int posY;
+    int monedas;
     int anchoCasillero;
     int altoCasillero;
+    int direccion;
     SDL_Texture *imagen;
     SDL_Rect rectImag;
-
-};
+//        Pila cajas;
+        };
 
 /** PRE: El vagon no debe haber sido creado
     POST: El vagon queda creado y preparado para ser utilizado,
@@ -77,7 +79,7 @@ void setEstado(Vagon &vagon, bool estado);
 /** PRE: Vagon creado con crearVagon()
     POST: Delvuelve el dato contenido en el campo  estado
 */
-int getEstado(Vagon &vagon);
+bool getEstado(Vagon &vagon);
 
 /** PRE: Vagon creado con crearVagon()
     POST: El campo pesoMax pasa a tener el dato ingresado
@@ -107,17 +109,50 @@ void setItem(Vagon &vagon, Item item);
 /** PRE: Vagon creado con crearVagon()
     POST: Delvuelve el dato contenido en el campo  item
 */
-int getItem(Vagon &vagon);
+Item getItem(Vagon &vagon);
 
 /** PRE: Vagon creado con crearVagon()
     POST: El campo cajas pasa a tener el dato ingresado
 */
-void setCajas(Vagon &vagon, Pila cajas);
+//void setCajas(Vagon &vagon, Pila cajas);
 
 /** PRE: Vagon creado con crearVagon()
     POST: Delvuelve el dato contenido en el campo  cajas
 */
-int getCajas(Vagon &vagon);
+//Pila getCajas(Vagon &vagon);
+
+
+/** PRE: La vagon no debe haber sido creada.
+   POST: La vagon esta creada y lista para ser usada.
+*/
+void crearVagon(Vagon &vagon, int f, int c, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
+
+
+/** PRE: La vagon debe haber sido creada mediante crearVagon().
+   POST: Se dibuja en pantalla la vagon
+
+   vagon: Instacia sobre la cual se invoca a la primitiva.
+*/
+void dibujarVagon(Vagon &vagon, SDL_Renderer* renderer);
+
+
+/** PRE: La vagon debe haber sido creada mediante crear().
+   POST: La vagon es eliminada.
+
+   vagon: Instacia sobre la cual se invoca a la primitiva */
+
+void moverVagon(Vagon &vagon,  SDL_Renderer* renderer, int intervalo);
+
+void moverVagonALaDerecha(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
+
+void moverVagonALaIzquierda(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
+
+void moverVagonAAbajo(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
+
+void moverVagonAArriba(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
+
+void reubicarVagon(Vagon &vagon);
+
 
 void crearVagon(Vagon &vagon, int f, int c, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
 

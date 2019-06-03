@@ -23,7 +23,7 @@ typedef struct
 
 /* Definición de Primitivas  */
 
-/* PRE: La estación no debe haber sido creada.
+/* PRE: La estación no debe haber sido creada.#endif
    POST: La estación esta creada y lista para ser usada. */
 
 void crear (Estacion &estacion);
@@ -68,4 +68,5 @@ void setPosYE (Estacion &estacion, int posYE);
 /* ? */
 
 void agregarVagon ();
+
 #endif
