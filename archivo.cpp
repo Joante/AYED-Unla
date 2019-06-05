@@ -104,67 +104,52 @@ Comanda readComanda(){
     return lectura;
 }
 
-void addNodo(Nodo* &lista, Mina datos){     //F in the chat for me
-    Nodo* nuevo = new Nodo();
-    nuevo->dato = datos;    //es lo mismo que *nuevo.dato = datos;
-    Nodo* aux1 = lista.siguiente;
-    Nodo* aux2;
-    while (aux1!= null){
-        aux2 = aux1;
-        aux1 = aux1->siguiente;
-    }
-    nuevo->siguiente=aux1;
-
-}
 
 
-
-Nodo* readMina(){       //implementar listas
-    Nodo* listaMina = new Nodo();
-    listaMina.siguiente = null;
-    ifstream mina;
-    string aux;
-    Mina auxiliar;
-    mina.open("mina.txt");
-    if(mina.fail()){
-        cerr<< "File 'mina.txt' failed to open";
+void readMina(Mina auxiliar[6]){
+    ifstream archivoMina;
+    string datos;
+    int contador = 0;
+    archivoMina.open("minas.txt");
+    if(archivoMina.fail()){
+        cerr<< "File 'minas.txt' failed to open";
         exit(EXIT_FAILURE);
     }
-    while(!mina.eof()){
-        getline(mina,aux,';');
-        auxiliar.posX = stringToInt(aux);
-        getline(mina,aux,';');
-        auxiliar.posY = stringToInt(aux);
-        getline(mina,aux,';');
-        auxiliar.codItem = aux;
-        getline(mina,aux,';');
-        auxiliar.intervaloProduccion = stringToInt(aux);
-        getline(mina,aux,';');
-        auxiliar.listaSecuencia[0] = stringToInt(aux);
-        getline(mina,aux,';');
-        auxiliar.listaSecuencia[1] = stringToInt(aux);
-        getline(mina,aux,';');
-        auxiliar.listaSecuencia[2] = stringToInt(aux);
-        getline(mina,aux,';');
-        auxiliar.listaSecuencia[3] = stringToInt(aux);
-        getline(mina,aux);
-        auxiliar.listaSecuencia[4] = stringToInt(aux);
-        addNodo(listaMina,auxiliar);                        //THIS DOESN'T FUCKING WORK GG
+    while(!archivoMina.eof()){
+        getline(archivoMina,datos,';');
+        auxiliar[contador].posX = stringToInt(datos);
+        getline(archivoMina,datos,';');
+        auxiliar[contador].posY = stringToInt(datos);
+        getline(archivoMina,datos,';');
+        auxiliar[contador].codItem = datos;
+        getline(archivoMina,datos,';');
+        auxiliar[contador].intervaloProduccion = stringToInt(datos);
+        getline(archivoMina,datos,';');
+        auxiliar[contador].listaSecuencia[0] = stringToInt(datos);
+        getline(archivoMina,datos,';');
+        auxiliar[contador].listaSecuencia[1] = stringToInt(datos);
+        getline(archivoMina,datos,';');
+        auxiliar[contador].listaSecuencia[2] = stringToInt(datos);
+        getline(archivoMina,datos,';');
+        auxiliar[contador].listaSecuencia[3] = stringToInt(datos);
+        getline(archivoMina,datos);
+        auxiliar[contador].listaSecuencia[4] = stringToInt(datos);
+        contador++;
     }
-    return listaMina;
+    archivoMina.close();
 }
 
 void crear(ArchivoGral &archivoGral){
     archivoGral.parametro = readParametros();
     archivoGral.comanda = readComanda();
-    archivoGral.listaMina = readMina();
+    readMina(archivoGral.listaMina);
 }
 
 void eliminar(ArchivoGral &archivoGral){
     //eliminar parametros? comanda? y la lista?
 }
 
-void getListaMina(ArchivoGral &archivoGral, Mina* listaMina){
+void getListaMina(ArchivoGral &archivoGral, Mina listaMina[6]){
     listaMina = archivoGral.listaMina;
 }
 

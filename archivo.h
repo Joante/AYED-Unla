@@ -3,11 +3,7 @@
 #include <string>
 
 
-
-
-
-
-typedef struct Parametro{
+struct Parametro{
     int segundosIntervalo;
     int pillageMax;
     int AreaDeBandido;
@@ -19,7 +15,7 @@ typedef struct Parametro{
     int vidaBandido;
 };
 
-typedef struct Comanda{
+struct Comanda{
     int oro;
     int plata;
     int bronce;
@@ -29,7 +25,7 @@ typedef struct Comanda{
 };
 
 
-typedef struct Mina {
+struct Mina {
     int posX;
     int posY;
     std::string codItem;
@@ -37,16 +33,11 @@ typedef struct Mina {
     int listaSecuencia[5];
 };
 
-struct Nodo{
-    Mina dato;
-    Nodo* siguiente;
-};
 
-
-typedef struct ArchivoGral{
+struct ArchivoGral{
     Parametro parametro;
     Comanda comanda;
-    Nodo* listaMina;    //juro que es provisorio
+    Mina listaMina[6];
 };
 
 
@@ -80,7 +71,7 @@ Pre: ArchivoGral debe haber sido creado.
 Post: se devuelve una lista conteniendo todas las minas.
 */
 
-void getListaMina(ArchivoGral &archivoGral, Nodo* listaMina);
+void getListaMina(ArchivoGral &archivoGral, Mina listaMina[6]);
 
 /*
 Pre: ArchivoGral debe haber sido creado.
@@ -173,7 +164,7 @@ Post: se devuelve la comanda del item seleccionado
 recibe el archivoGral, un int y un string con el nombre de la comanda a obtener
 */
 
-void getComandaDe(ArchivoGral &archivoGral, int& com, string nombre);
+void getComandaDe(ArchivoGral &archivoGral, int& com, std::string nombre);
 
 
 #endif // ARCHIVO_H
