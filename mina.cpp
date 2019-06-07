@@ -1,9 +1,7 @@
 #include "mina.h"
 #include <iostream>
-#include <SDL.h>
-#include <SDL_image.h>
 
-void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduccion, int secuencia[],SDL_Renderer* renderer){
+void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[],SDL_Renderer* renderer){
     mina.posY= posY;//coordenada logica y
     mina.posX= posX;//coordenada logica x
     mina.imagen = IMG_LoadTexture(renderer,"img/mina.png");
@@ -36,14 +34,14 @@ void setPosX (Mina &mina, int posX){
 }
 
 int getPosY (Mina &mina){
-    return mina.posY
+    return mina.posY;
 }
 
 void setPosY (Mina &mina, int posY){
     mina.posY = posY;
 }
 
-int getIntervaloProduccion (Mina &mina){{
+int getIntervaloProduccion (Mina &mina){
     return mina.intervaloProduccion;
 }
 
@@ -59,14 +57,14 @@ void setListaCajas (Mina &mina, ListaCajas cajas){
     mina.cajas = cajas;
 }
 
-int[] getSecuencia (Mina &mina){
+int * getSecuencia (Mina &mina){
     return mina.secuencia;
 }
 
-void setSecuencia (Mina &mina, int secuencia[]){
+void setSecuencia (Mina &mina, int* secuencia){
     mina.secuencia = secuencia;
 }
 
 void dibujarMina(Mina &mina, SDL_Renderer* renderer){
-    SDL_RenderCopy(renderer, imagen.imagen,NULL,&(imagen.rectImag));
+    SDL_RenderCopy(renderer, mina.imagen,NULL,&(mina.rectImag));
 }

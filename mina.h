@@ -1,6 +1,9 @@
 #ifndef MINA_H_INCLUDED
 #define MINA_H_INCLUDED
 
+#include <SDL.h>
+#include <SDL_image.h>
+#include "ListaCajas.h"
 /**
     Definición del tipo de Dato para el manejo de la mina.
     Atributos:
@@ -55,7 +58,7 @@ void eliminarMina (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-int getEstado (Mina &mina);
+bool getEstado (Mina &mina);
 
 
 /**
@@ -64,7 +67,7 @@ int getEstado (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-int setEstado (Mina &mina, bool estado);
+void setEstado (Mina &mina, bool estado);
 
 /**
     PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado la posX mediante setPosX().
@@ -81,7 +84,7 @@ int  getPosX (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-int setPosX (Mina &mina, int posX);
+void setPosX (Mina &mina, int posX);
 
 /**
     PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado la posY mediante setPosY().
@@ -98,7 +101,7 @@ int getPosY (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-int setPosY (Mina &mina, int posY);
+void setPosY (Mina &mina, int posY);
 
 /**
     PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado el intervaloProduccion mediante setIntervaloProduccion().
@@ -115,7 +118,7 @@ int getIntervaloProduccion (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-int setIntervaloProduccion (Mina &mina, int intervaloProduccion);
+void setIntervaloProduccion (Mina &mina, int intervaloProduccion);
 
 /**
     PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado la ListaCajas mediante setListaCajas().
@@ -123,7 +126,7 @@ int setIntervaloProduccion (Mina &mina, int intervaloProduccion);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-int getListaCajas (Mina &mina);
+ListaCajas getListaCajas (Mina &mina);
 
 
 /**
@@ -132,7 +135,7 @@ int getListaCajas (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-int setListaCajas (Mina &mina, ListaCajas cajas);
+void setListaCajas (Mina &mina, ListaCajas cajas);
 
 /**
     PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado la secuencia mediante setSecuencia().
@@ -140,7 +143,7 @@ int setListaCajas (Mina &mina, ListaCajas cajas);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-int getSecuencia[] (Mina &mina);
+int* getSecuencia (Mina &mina);
 
 
 /**
@@ -149,7 +152,7 @@ int getSecuencia[] (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-void setSecuencia[] (Mina &mina, int secuencia[]);
+void setSecuencia (Mina &mina, int* secuencia);
 
 /**
     PRE: La mina debe haber sido creada mediante crear().
