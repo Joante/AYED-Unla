@@ -1,7 +1,9 @@
 #include "mina.h"
 #include <iostream>
+#include <SDL.h>
+#include <SDL_image.h>
 
-void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[],SDL_Renderer* renderer){
+void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia,SDL_Renderer* renderer){
     mina.posY= posY;//coordenada logica y
     mina.posX= posX;//coordenada logica x
     mina.imagen = IMG_LoadTexture(renderer,"img/mina.png");
@@ -10,6 +12,10 @@ void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduc
     mina.rectImag.x=posX* anchoCasillero;//coordenada de dibujo x
     mina.rectImag.w= anchoCasillero;//ancho
     mina.rectImag.h= altoCasillero;//alto
+}
+
+void dibujarMina(Mina &mina, SDL_Renderer* renderer){
+    SDL_RenderCopy(renderer, mina.imagen,NULL,&(mina.rectImag));
 }
 
 void eliminarMina (Mina &mina){
@@ -67,6 +73,3 @@ void setSecuencia (Mina &mina, int* secuencia){
    }
 }
 
-void dibujarMina(Mina &mina, SDL_Renderer* renderer){
-    SDL_RenderCopy(renderer, mina.imagen,NULL,&(mina.rectImag));
-}

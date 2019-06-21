@@ -1,9 +1,10 @@
 #ifndef MINA_H_INCLUDED
 #define MINA_H_INCLUDED
 
+#include "ListaCajas.h"
+
 #include <SDL.h>
 #include <SDL_image.h>
-#include "ListaCajas.h"
 /**
     Definición del tipo de Dato para el manejo de la mina.
     Atributos:
@@ -40,7 +41,7 @@ typedef struct Mina{
     POST: La mina esta creada y listo para ser usada.
 */
 
-void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[],SDL_Renderer* renderer);
+void crearMina (Mina &mina, bool estado,int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[],SDL_Renderer* renderer);
 
 
 /**
@@ -143,7 +144,7 @@ void setListaCajas (Mina &mina, ListaCajas cajas);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-int* getSecuencia (Mina &mina);
+int * getSecuencia (Mina &mina);
 
 
 /**
