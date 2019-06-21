@@ -1,5 +1,6 @@
 #ifndef BANDIDO_H_INCLUDED
 #define BANDIDO_H _INCLUDED
+#include"SDL.h"
 /* falta agregar el .h de locomotora*/
 
 /** Definicion del tipo de dato para manejo de atributos:
@@ -24,6 +25,13 @@ typedef struct
     int areaDeAtaque;
     int cantidadSolicitada;
     int itemSolicitado;
+    int f;
+    int c;
+    int anchoCasillero;
+    int altoCasillero;
+    SDL_Texture *imagen;
+    SDL_Rect rectImag;
+
 } Bandido;
 
 /**
@@ -177,6 +185,18 @@ POST:
 
 */
 //void robaBandido(Bandido &bandido, Locomotora &locomotora );
+
+
+/**
+ PRIMITIVAS DE SDL
+*/
+
+void CrearBandido(Bandido &bandido, int f, int c, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
+void DibujarBandido(Bandido &bandido, SDL_Renderer* renderer);
+void DestruirBandida(Bandido &bandido);
+
+
+
 
 #endif // BANDIDO_H_INCLUDED
 

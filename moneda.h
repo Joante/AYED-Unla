@@ -38,7 +38,7 @@ typedef struct
 /* PRE: La moneda no debe haber sido creada.
    POST: La moneda esta creada y lista para ser usada. */
 
-void crear (Moneda &moneda, int posX, int posY, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
+void crearMoneda(Moneda &moneda,int posX, int posY, int altoCasillero, int anchoCasillero,int altoVentana, int anchoVentana, SDL_Renderer* renderer);
 
 /* PRE: La moneda debe haber sido creada.
    POST: La moneda se visualiza por pantalla*/
@@ -50,7 +50,7 @@ void dibujar(Moneda &moneda, SDL_Renderer* renderer);
 
    moneda: Instacia sobre la cual se invoca a la primitiva */
 
-void eliminar (Moneda &moneda);
+void eliminarMoneda (Moneda &moneda);
 
 /* PRE: La moneda debe haber sido creada mediante crear().
    POST: Se devuelve la posición en X de la moneda
@@ -105,10 +105,8 @@ void setPosY (Moneda &moneda, int posY);
    moneda: Instacia sobre la cual se invoca a la primitiva.
 */
 
-void generarMoneda (Moneda &moneda);
+void generarMoneda (Moneda &moneda, int tiempoVida);
 
-/* ? */
 
-void sumarMoneda ();
 
 #endif

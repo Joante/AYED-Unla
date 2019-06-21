@@ -71,3 +71,375 @@
 	<SDL.h>
 	<SDL_image.h>
 
+1559754204 source:c:\users\franco ribas\downloads\ayed-unla-master\lista.cpp
+	"Lista.h"
+
+1559754204 c:\users\franco ribas\downloads\ayed-unla-master\lista.h
+
+1560466742 source:c:\users\franco ribas\downloads\ayed-unla-master\locomotora.cpp
+	"locomotora.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<cstring>
+	<iostream>
+	<stdio.h>
+	<cmath>
+	<iomanip>
+
+1559754204 c:\users\franco ribas\downloads\ayed-unla-master\locomotora.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"Vagon.h"
+
+1559754204 c:\users\franco ribas\downloads\ayed-unla-master\vagon.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560473306 source:c:\users\franco ribas\downloads\ayed-unla-master\main.cpp
+	"locomotora.h"
+	"vagon.h"
+	"terreno.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<iostream>
+	<math.h>
+	<time.h>
+
+1560470272 c:\users\franco ribas\downloads\ayed-unla-master\terreno.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1559754204 source:c:\users\franco ribas\downloads\ayed-unla-master\pantalla.cpp
+	"pantalla.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1559754204 c:\users\franco ribas\downloads\ayed-unla-master\pantalla.h
+
+1560472566 source:c:\users\franco ribas\downloads\ayed-unla-master\terreno.cpp
+	"terreno.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1559754204 source:c:\users\franco ribas\downloads\ayed-unla-master\vagon.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"Vagon.h"
+	"Vagon.h"
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<cstring>
+	<iostream>
+	<stdio.h>
+	<cmath>
+	<iomanip>
+
+1559754204 source:c:\users\franco ribas\downloads\ayed-unla-master\archivo.cpp
+	"archivo.h"
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<sstream>
+
+1559754204 c:\users\franco ribas\downloads\ayed-unla-master\archivo.h
+	<string>
+
+1559754204 source:c:\users\franco ribas\downloads\ayed-unla-master\caja.cpp
+	"caja.h"
+	<string>
+
+1559754204 c:\users\franco ribas\downloads\ayed-unla-master\caja.h
+	<string>
+
+1560459964 source:c:\users\franco ribas\downloads\ayed-unla-master\bandido.cpp
+	"bandido.h"
+
+1559754204 c:\users\franco ribas\downloads\ayed-unla-master\bandido.h
+
+1560461432 source:c:\users\franco ribas\downloads\ayed-unla-master\moneda.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<time.h>
+	"moneda.h"
+	<iostream>
+
+1560460002 c:\users\franco ribas\downloads\ayed-unla-master\moneda.h
+	<SDL.h>
+	<SDL_image.h>
+
+1560476858 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\archivo.cpp
+	"archivo.h"
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<sstream>
+
+1560476857 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\archivo.h
+	<string>
+
+1560476857 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\bandido.cpp
+	"bandido.h"
+
+1560476858 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\bandido.h
+
+1560476858 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\caja.cpp
+	"caja.h"
+	<string>
+
+1560476857 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\caja.h
+	<string>
+
+1560476857 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\lista.cpp
+	"Lista.h"
+
+1560476857 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\lista.h
+
+1560476857 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\locomotora.cpp
+	"locomotora.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<cstring>
+	<iostream>
+	<stdio.h>
+	<cmath>
+	<iomanip>
+
+1560476855 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\locomotora.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"Vagon.h"
+
+1560476857 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\vagon.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560485192 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\main.cpp
+	"locomotora.h"
+	"vagon.h"
+	"terreno.h"
+	"estacion.h"
+	"moneda.h"
+	"mina.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<iostream>
+	<math.h>
+	<time.h>
+
+1560476857 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\terreno.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560483668 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\moneda.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<time.h>
+	"moneda.h"
+	<iostream>
+	<cstdlib>
+	<vector>
+	<time.h>
+
+1560484759 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\moneda.h
+	<SDL.h>
+	<SDL_image.h>
+
+1560476857 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\pantalla.cpp
+	"pantalla.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560476856 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\pantalla.h
+
+1560476857 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\terreno.cpp
+	"terreno.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560476857 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\vagon.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"Vagon.h"
+	"Vagon.h"
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<cstring>
+	<iostream>
+	<stdio.h>
+	<cmath>
+	<iomanip>
+
+1560480118 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\estacion.cpp
+	"estacion.h"
+	<iostream>
+	"SDL.h"
+	"SDL_image.h"
+
+1560479853 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\estacion.h
+	"SDL.h"
+
+1560484370 source:c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\mina.cpp
+	"mina.h"
+	<iostream>
+
+1560484646 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\mina.h
+	<SDL.h>
+	<SDL_image.h>
+	"ListaCajas.h"
+
+1560483435 c:\users\matri\desktop\ayed\ayed-master\ayed-unla-master\listacajas.h
+	"caja.h"
+
+1560510836 source:c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\archivo.cpp
+	"archivo.h"
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<sstream>
+
+1560510838 c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\archivo.h
+	<string>
+
+1560501832 source:c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\bandido.cpp
+	"bandido.h"
+	<SDL.h>
+	<SDL_image.h>
+
+1560502832 c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\bandido.h
+	<SDL.h>
+	<SDL_image.h>
+
+1560510838 source:c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\caja.cpp
+	"caja.h"
+	<string>
+
+1560510838 c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\caja.h
+	<string>
+
+1560510856 source:c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\lista.cpp
+	"Lista.h"
+
+1560510856 c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\lista.h
+
+1560505107 source:c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\locomotora.cpp
+	"locomotora.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<cstring>
+	<iostream>
+	<stdio.h>
+	<cmath>
+	<iomanip>
+
+1560505502 c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\locomotora.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"Vagon.h"
+
+1560510872 c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\vagon.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560505209 source:c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\main.cpp
+	"locomotora.h"
+	"bandido.h"
+	"vagon.h"
+	"terreno.h"
+	"moneda.h"
+	"estacion.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<iostream>
+	<math.h>
+	<time.h>
+	<cstdio>
+
+1560510868 c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\terreno.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560510840 c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\estacion.h
+	"SDL.h"
+
+1560504995 source:c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\moneda.cpp
+	"moneda.h"
+	<SDL.h>
+	<SDL_image.h>
+	<time.h>
+	<iostream>
+	<cstdlib>
+	<vector>
+	<time.h>
+	<iomanip>
+
+1560505157 c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\moneda.h
+	<SDL.h>
+	<SDL_image.h>
+
+1560510864 source:c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\pantalla.cpp
+	"pantalla.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560510864 c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\pantalla.h
+
+1560510868 source:c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\terreno.cpp
+	"terreno.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560510868 source:c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\vagon.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"Vagon.h"
+	"Vagon.h"
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<cstring>
+	<iostream>
+	<stdio.h>
+	<cmath>
+	<iomanip>
+
+1560510842 source:c:\users\franco ribas\downloads\ayed-unla-master-v2\ayed-unla-master\estacion.cpp
+	"estacion.h"
+	<iostream>
+	"SDL.h"
+	"SDL_image.h"
+

@@ -186,8 +186,6 @@ void moverLocomotora(Locomotora &locomotora, SDL_Renderer* renderer,  int interv
 
 int direccionarLocomotora(Locomotora &locomotora, SDL_Event evento);
 
-
-
 void moverLocomotoraALaDerecha(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo);
 
 void moverLocomotoraALaIzquierda(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo);
@@ -195,5 +193,10 @@ void moverLocomotoraALaIzquierda(Locomotora &locomotora, SDL_Renderer* renderer,
 void moverLocomotoraAAbajo(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo);
 
 void moverLocomotoraAArriba(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo);
+
+
+void sumarMoneda (Locomotora &locomotora);
+
+
 
 #endif

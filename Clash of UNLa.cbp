@@ -32,10 +32,18 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Clash of UNLa.cbp" />
 		<Unit filename="Lista.cpp" />
 		<Unit filename="Lista.h" />
 		<Unit filename="Vagon.cpp" />
 		<Unit filename="Vagon.h" />
+		<Unit filename="archivo.cpp" />
+		<Unit filename="archivo.h" />
+		<Unit filename="bandido.cpp" />
+		<Unit filename="bandido.h" />
+		<Unit filename="caja.cpp" />
+		<Unit filename="caja.h" />
+		<Unit filename="estacion.cpp" />
 		<Unit filename="estacion.h" />
 		<Unit filename="locomotora.cpp" />
 		<Unit filename="locomotora.h" />
