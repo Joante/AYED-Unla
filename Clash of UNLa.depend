@@ -443,3 +443,131 @@
 	"SDL.h"
 	"SDL_image.h"
 
+1560520936 source:c:\users\usuario\documents\johan\tpayed\ayed-unla\archivo.cpp
+	"archivo.h"
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<sstream>
+
+1560520938 c:\users\usuario\documents\johan\tpayed\ayed-unla\archivo.h
+	<string>
+
+1560520938 source:c:\users\usuario\documents\johan\tpayed\ayed-unla\caja.cpp
+	"caja.h"
+	<string>
+
+1560520938 c:\users\usuario\documents\johan\tpayed\ayed-unla\caja.h
+	<string>
+
+1560520940 source:c:\users\usuario\documents\johan\tpayed\ayed-unla\estacion.cpp
+	"estacion.h"
+	<iostream>
+	"SDL.h"
+	"SDL_image.h"
+
+1560520940 c:\users\usuario\documents\johan\tpayed\ayed-unla\estacion.h
+	"SDL.h"
+
+1560520946 source:c:\users\usuario\documents\johan\tpayed\ayed-unla\lista.cpp
+	"Lista.h"
+
+1560520946 c:\users\usuario\documents\johan\tpayed\ayed-unla\lista.h
+
+1561093438 source:c:\users\usuario\documents\johan\tpayed\ayed-unla\locomotora.cpp
+	"locomotora.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<cstring>
+	<iostream>
+	<stdio.h>
+	<cmath>
+	<iomanip>
+
+1560520946 c:\users\usuario\documents\johan\tpayed\ayed-unla\locomotora.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"Vagon.h"
+
+1560520954 c:\users\usuario\documents\johan\tpayed\ayed-unla\vagon.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1561093405 source:c:\users\usuario\documents\johan\tpayed\ayed-unla\main.cpp
+	"locomotora.h"
+	"bandido.h"
+	"vagon.h"
+	"terreno.h"
+	"moneda.h"
+	"estacion.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	<iostream>
+	<math.h>
+	<time.h>
+	<cstdio>
+
+1560534650 c:\users\usuario\documents\johan\tpayed\ayed-unla\bandido.h
+	"SDL.h"
+
+1560520952 c:\users\usuario\documents\johan\tpayed\ayed-unla\terreno.h
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560520950 c:\users\usuario\documents\johan\tpayed\ayed-unla\moneda.h
+	<SDL.h>
+	<SDL_image.h>
+
+1561093424 source:c:\users\usuario\documents\johan\tpayed\ayed-unla\moneda.cpp
+	"moneda.h"
+	<SDL.h>
+	<SDL_image.h>
+	<time.h>
+	<iostream>
+	<cstdlib>
+	<vector>
+	<time.h>
+	<iomanip>
+
+1560520950 source:c:\users\usuario\documents\johan\tpayed\ayed-unla\pantalla.cpp
+	"pantalla.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560520950 c:\users\usuario\documents\johan\tpayed\ayed-unla\pantalla.h
+
+1560520952 source:c:\users\usuario\documents\johan\tpayed\ayed-unla\terreno.cpp
+	"terreno.h"
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1560520954 source:c:\users\usuario\documents\johan\tpayed\ayed-unla\vagon.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"Vagon.h"
+	"Vagon.h"
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<cstring>
+	<iostream>
+	<stdio.h>
+	<cmath>
+	<iomanip>
+
+1560534636 source:c:\users\usuario\documents\johan\tpayed\ayed-unla\bandido.cpp
+	"bandido.h"
+	"SDL.h"
+	"SDL_image.h"
+

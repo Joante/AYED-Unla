@@ -242,5 +242,5 @@ void colisionLimites (Locomotora &locomotora)
 }
 
  void sumarMoneda (Locomotora &locomotora){
- locomotora.monedas = locomotora.monedas + 1;
+    locomotora.monedas = locomotora.monedas + 1;
  }

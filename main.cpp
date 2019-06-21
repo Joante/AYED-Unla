@@ -60,7 +60,7 @@ int main(int argc, char** argv)
         Estacion estacion;
         Moneda moneda;
         Bandido bandido;
-        crearBandido(bandido,5,5,anchoCasillero,altoCasillero,renderer);
+        CrearBandido(bandido,5,5,anchoCasillero,altoCasillero,renderer);
         crearLocomotora(locomotora,3,4,anchoCasillero,altoCasillero,renderer);
         crearVagon(vagon,3,3,anchoCasillero,altoCasillero,renderer); //aparece en el cuadrante 2,3
         crearEstacion(estacion,1,1,anchoCasillero,altoCasillero,renderer);
@@ -131,7 +131,7 @@ int main(int argc, char** argv)
                     dibujarTerreno(matrizTerreno[i][j],renderer);
                 }
             }
-            dibujarBandido(bandido,renderer);
+            DibujarBandido(bandido,renderer);
             dibujarEstacion(estacion,renderer);
             dibujarLocomotora(locomotora,renderer);
             dibujarVagon(vagon, renderer);

@@ -31,7 +31,7 @@ void dibujar(Moneda &moneda, SDL_Renderer* renderer){
 }
 
 void eliminarMoneda (Moneda &moneda){
-SDL_DestroyTexture(moneda.imagen);
+    SDL_DestroyTexture(moneda.imagen);
 }
 
 int getPosX (Moneda &moneda){
