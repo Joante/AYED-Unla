@@ -63,12 +63,13 @@ void setListaCajas (Mina &mina, ListaCajas cajas){
     mina.cajas = cajas;
 }
 
-int getSecuencia (Mina &mina){
+int * getSecuencia (Mina &mina){
     return mina.secuencia;
 }
 
-void setSecuencia (Mina &mina, int secuencia){
-    mina.secuencia = secuencia;
+void setSecuencia (Mina &mina, int* secuencia){
+   for(int i=0;i<10;i++){
+    mina.secuencia[i]=secuencia[i];
+   }
 }
-
 

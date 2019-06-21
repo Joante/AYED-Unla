@@ -27,7 +27,7 @@ typedef struct Mina{
     int posY;
     int intervaloProduccion;
     ListaCajas cajas;
-    int secuencia;
+    int secuencia[];
     int anchoCasillero;
     int altoCasillero;
     SDL_Texture *imagen;
@@ -41,7 +41,7 @@ typedef struct Mina{
     POST: La mina esta creada y listo para ser usada.
 */
 
-void crearMina (Mina &mina, bool estado,int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia,SDL_Renderer* renderer);
+void crearMina (Mina &mina, bool estado,int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[],SDL_Renderer* renderer);
 
 
 /**
@@ -144,7 +144,7 @@ void setListaCajas (Mina &mina, ListaCajas cajas);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-int getSecuencia (Mina &mina);
+int * getSecuencia (Mina &mina);
 
 
 /**
