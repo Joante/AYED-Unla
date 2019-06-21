@@ -26,7 +26,8 @@ typedef struct Mina{
     int posX;
     int posY;
     int intervaloProduccion;
-    ListaCajas cajas;
+    //ListaCajas cajas;
+    Caja caja;
     int secuencia[];
     int anchoCasillero;
     int altoCasillero;
@@ -127,8 +128,8 @@ void setIntervaloProduccion (Mina &mina, int intervaloProduccion);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-ListaCajas getListaCajas (Mina &mina);
-
+//ListaCajas getListaCajas (Mina &mina);
+Caja getCaja (Mina &mina);
 
 /**
     PRE: La mina debe haber sido creada mediante crear().
@@ -136,8 +137,8 @@ ListaCajas getListaCajas (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-void setListaCajas (Mina &mina, ListaCajas cajas);
-
+//void setListaCajas (Mina &mina, ListaCajas cajas);
+void setCaja (Mina &mina, Caja &caja);
 /**
     PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado la secuencia mediante setSecuencia().
     POST: Se devuelve la secuencia de la mina.
@@ -162,6 +163,8 @@ void setSecuencia (Mina &mina, int* secuencia);
 */
 
 void dibujarMina(Mina &mina, SDL_Renderer* renderer);
+
+void producirCaja (Mina &mina);
 
 
 #endif // MINA_H_INCLUDED

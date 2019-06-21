@@ -3,7 +3,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
-void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia,SDL_Renderer* renderer){
+void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[],SDL_Renderer* renderer){
     mina.posY= posY;//coordenada logica y
     mina.posX= posX;//coordenada logica x
     mina.imagen = IMG_LoadTexture(renderer,"img/mina.png");
@@ -55,12 +55,18 @@ void setIntervaloProduccion (Mina &mina, int intervaloProduccion){
     mina.intervaloProduccion = intervaloProduccion;
 }
 
-ListaCajas getListaCajas (Mina &mina){
+/*ListaCajas getListaCajas (Mina &mina){
     return mina.cajas;
+}*/
+Caja getCaja(Mina &mina){
+    return mina.caja;
 }
 
-void setListaCajas (Mina &mina, ListaCajas cajas){
+/*void setListaCajas (Mina &mina, ListaCajas cajas){
     mina.cajas = cajas;
+}*/
+void setCaja(Mina &mina, Caja &caja){
+    mina.caja = caja;
 }
 
 int * getSecuencia (Mina &mina){
@@ -71,5 +77,9 @@ void setSecuencia (Mina &mina, int* secuencia){
    for(int i=0;i<10;i++){
     mina.secuencia[i]=secuencia[i];
    }
+}
+
+void producirCaja (Mina &mina){
+
 }
 

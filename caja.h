@@ -4,7 +4,7 @@
 
 
 typedef struct{
-    std::string contenido;   //Que material contiene la caja, es necesario???
+    std::string material;   //Que material contiene la caja, es necesario???
     int capMax;         //Capacidad maxima de la caja dada por la secuencia
     int capActual;      //Para utilizar luego al ser robado etc
 }Caja;
@@ -13,13 +13,13 @@ typedef struct{
 /*
 Pre: no debe haber sido creada
 
-Post: Devuelve una caja de contenido X y capacidad maxima = capacidad actual, dependiendo la secuencia de dicho contenido.
+Post: Devuelve una caja de material X y capacidad maxima = capacidad actual, dependiendo la secuencia de dicho material.
 
-recibe la caja, el contenido y la secuencia actual
-(capacidad de la caja) de dicho contenido.
+recibe la caja, el material y la secuencia actual
+(capacidad de la caja) de dicho material.
 
 */
-void crear(Caja &caja, std::string contenido, int secuenciaActual);
+void crearCaja(Caja &caja, std::string material, int secuenciaActual);
 
 
 /*
@@ -29,18 +29,36 @@ Post: se elimina la caja
 
 recibe la instancia de caja a ser eliminada
 */
-void eliminar(Caja &caja);
+void eliminarCaja(Caja *caja);
+
+/*
+Pre: la caja debe haber sido creada
+
+Post: Se setea el tipo de material de la caja
+
+recibe la caja
+*/
+
+void setMaterialCaja (Caja &caja, std::string material);
+
+/*
+Pre: la caja debe haber sido creada
+
+Post: Se devuelve el tipo de material de la caja
+
+recibe la caja
+*/
+std::string getMaterialCaja(Caja &caja);
 
 
 /*
 Pre: la caja debe haber sido creada
 
-Post: Se devuelve el tipo de contenido de la caja
+Post: setea la capacidad maxima de la caja
 
-recibe la caja
 */
-std::string getContenido(Caja &caja);
 
+void setCapMaxCaja (Caja &caja, int capMax);
 
 /*
 Pre: la caja debe haber sido creada
@@ -48,15 +66,22 @@ Pre: la caja debe haber sido creada
 Post: devuelve la capacidad maxima de la caja
 
 */
-int getCapMax(Caja &caja);
+int getCapMaxCaja(Caja &caja);
 
+/*
+Pre: la caja debe haber sido creada
+
+post: setea la capacidad actual de la caja
+*/
+
+void setCapActualCaja (Caja &caja, int capActual);
 
 /*
 Pre: la caja debe haber sido creada
 
 post: devuelve la capacidad actual de la caja
 */
-int getCapActual(Caja &caja);
+int getCapActualCaja(Caja &caja);
 
 
 /*
@@ -69,7 +94,7 @@ se recomienda eliminar todas las cajas de capActual 0
 
 
 */
-int restarContenido(Caja &caja, int menos);
+void restarMaterialCaja(Caja &caja, int cantMenos);
 
 
 

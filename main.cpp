@@ -4,6 +4,7 @@
 #include "terreno.h"
 #include "moneda.h"
 #include "estacion.h"
+#include "mina.h"
 #include <iostream>
 #include <SDL.h>
 #include <SDL_image.h>
@@ -60,6 +61,9 @@ int main(int argc, char** argv)
         Estacion estacion;
         Moneda moneda;
         Bandido bandido;
+        Mina mina;
+        int secuencia[2] = {2,4};
+        crearMina(mina, true,7,3,2,anchoCasillero,altoCasillero,secuencia,renderer);
         CrearBandido(bandido,5,5,anchoCasillero,altoCasillero,renderer);
         crearLocomotora(locomotora,3,4,anchoCasillero,altoCasillero,renderer);
         crearVagon(vagon,3,3,anchoCasillero,altoCasillero,renderer); //aparece en el cuadrante 2,3
@@ -136,6 +140,7 @@ int main(int argc, char** argv)
             dibujarLocomotora(locomotora,renderer);
             dibujarVagon(vagon, renderer);
             dibujar(moneda, renderer);
+            dibujarMina(mina,renderer);
 
             SDL_RenderPresent(renderer);
 
