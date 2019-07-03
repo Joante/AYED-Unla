@@ -1,9 +1,15 @@
 #include "mina.h"
+#include "caja.h"
 #include <iostream>
 #include <SDL.h>
 #include <SDL_image.h>
 
-void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[],SDL_Renderer* renderer){
+using namespace std;
+
+void crearMina (Mina &mina){
+}
+
+void construirMina(Mina &mina, bool estado, int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[2], std::string material, SDL_Renderer* renderer){
     mina.posY= posY;//coordenada logica y
     mina.posX= posX;//coordenada logica x
     mina.imagen = IMG_LoadTexture(renderer,"img/mina.png");
@@ -11,7 +17,12 @@ void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduc
     mina.rectImag.y=posY* altoCasillero;//coordenada de dibujo y
     mina.rectImag.x=posX* anchoCasillero;//coordenada de dibujo x
     mina.rectImag.w= anchoCasillero;//ancho
-    mina.rectImag.h= altoCasillero;//alto
+    mina.rectImag.h= altoCasillero;//alto)
+    setSecuencia(mina, secuencia);
+    mina.intervaloProduccion = intervaloProduccion;
+    mina.material = material;
+    mina.contadorSecuencia = 0;
+    mina.estado=estado;
 }
 
 void dibujarMina(Mina &mina, SDL_Renderer* renderer){
@@ -23,11 +34,11 @@ void eliminarMina (Mina &mina){
 }
 
 
-bool getEstado (Mina &mina){
+bool getEstadoMina(Mina &mina){
     return mina.estado;
 }
 
-void setEstado (Mina &mina, bool estado){
+void setEstadoMina (Mina &mina, bool estado){
     mina.estado=estado;
 }
 
@@ -55,18 +66,12 @@ void setIntervaloProduccion (Mina &mina, int intervaloProduccion){
     mina.intervaloProduccion = intervaloProduccion;
 }
 
-/*ListaCajas getListaCajas (Mina &mina){
+Caja getPilaCajas (Mina &mina){
     return mina.cajas;
-}*/
-Caja getCaja(Mina &mina){
-    return mina.caja;
 }
 
-/*void setListaCajas (Mina &mina, ListaCajas cajas){
+void setPilaCajas (Mina &mina, Caja cajas){
     mina.cajas = cajas;
-}*/
-void setCaja(Mina &mina, Caja &caja){
-    mina.caja = caja;
 }
 
 int * getSecuencia (Mina &mina){
@@ -74,12 +79,28 @@ int * getSecuencia (Mina &mina){
 }
 
 void setSecuencia (Mina &mina, int* secuencia){
-   for(int i=0;i<10;i++){
+   for(int i=0;i<2;i++){
     mina.secuencia[i]=secuencia[i];
    }
 }
 
-void producirCaja (Mina &mina){
+void setMaterialMina (Mina &mina, std::string material){
+    mina.material = material;
+}
 
+std::string getMaterialMina(Mina &mina){
+    return mina.material;
+}
+
+void producirCaja (Mina &mina){
+    Caja* caja = new Caja;
+    construirCaja(*caja,getMaterialMina(mina), mina.secuencia[mina.contadorSecuencia]);
+    //push(mina.cajas, caja);
+    if(mina.contadorSecuencia < 2){
+        mina.contadorSecuencia++;
+    }else {
+        mina.contadorSecuencia=0;
+    }
+    mina.cajas = *caja;
 }
 

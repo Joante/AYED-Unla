@@ -2,6 +2,7 @@
 #define CAJA_H
 #include <string>
 
+using namespace std;
 
 typedef struct{
     std::string material;   //Que material contiene la caja, es necesario???
@@ -17,10 +18,20 @@ Post: Devuelve una caja de material X y capacidad maxima = capacidad actual, dep
 
 recibe la caja, el material y la secuencia actual
 (capacidad de la caja) de dicho material.
-
 */
-void crearCaja(Caja &caja, std::string material, int secuenciaActual);
 
+void crearCaja(Caja &caja);
+
+/*
+    Pre: Debe haber sido creada
+
+    Post: Construye la caja en base al material y a la capacidad maxima.
+
+    recibe la caja, el material y la secuencia actual
+    (capacidad de la caja) de dicho material.
+*/
+
+void construirCaja (Caja &caja, std::string material, int capMax);
 
 /*
 Pre: la caja debe haber sido creada
@@ -29,7 +40,7 @@ Post: se elimina la caja
 
 recibe la instancia de caja a ser eliminada
 */
-void eliminarCaja(Caja *caja);
+void eliminarCaja(Caja caja);
 
 /*
 Pre: la caja debe haber sido creada

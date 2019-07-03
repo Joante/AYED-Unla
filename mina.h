@@ -1,10 +1,12 @@
 #ifndef MINA_H_INCLUDED
 #define MINA_H_INCLUDED
 
-#include "ListaCajas.h"
+#include "Pila.h"
+#include "caja.h"
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <iostream>
 /**
     Definición del tipo de Dato para el manejo de la mina.
     Atributos:
@@ -26,11 +28,13 @@ typedef struct Mina{
     int posX;
     int posY;
     int intervaloProduccion;
-    //ListaCajas cajas;
-    Caja caja;
-    int secuencia[];
+    //Pila cajas;
+    Caja cajas;
+    int secuencia[2];
     int anchoCasillero;
     int altoCasillero;
+    int contadorSecuencia;
+    std::string material;
     SDL_Texture *imagen;
     SDL_Rect rectImag;
 } Mina;
@@ -42,8 +46,14 @@ typedef struct Mina{
     POST: La mina esta creada y listo para ser usada.
 */
 
-void crearMina (Mina &mina, bool estado,int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[],SDL_Renderer* renderer);
+void crearMina (Mina &mina);
 
+/**
+    PRE: La mina debe haber sido creada.
+    POST: La mina esta construida y listo para ser usada.
+*/
+
+void construirMina(Mina &mina, bool estado,int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[],std::string material,SDL_Renderer* renderer);
 
 /**
     PRE: La mina debe haber sido creada mediante crear().
@@ -60,7 +70,7 @@ void eliminarMina (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-bool getEstado (Mina &mina);
+bool getEstadoMina (Mina &mina);
 
 
 /**
@@ -69,7 +79,7 @@ bool getEstado (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-void setEstado (Mina &mina, bool estado);
+void setEstadoMina (Mina &mina, bool estado);
 
 /**
     PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado la posX mediante setPosX().
@@ -128,8 +138,7 @@ void setIntervaloProduccion (Mina &mina, int intervaloProduccion);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-//ListaCajas getListaCajas (Mina &mina);
-Caja getCaja (Mina &mina);
+Caja getPilaCajas (Mina &mina);
 
 /**
     PRE: La mina debe haber sido creada mediante crear().
@@ -137,15 +146,49 @@ Caja getCaja (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-//void setListaCajas (Mina &mina, ListaCajas cajas);
-void setCaja (Mina &mina, Caja &caja);
+void setPilaCajas (Mina &mina, Caja cajas);
+
+
 /**
     PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado la secuencia mediante setSecuencia().
     POST: Se devuelve la secuencia de la mina.
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
+
 int * getSecuencia (Mina &mina);
+
+/**
+    PRE: La mina debe haber sido creada mediante crear().
+    POST: Se setea el material de la mina.
+    Mina: Instacia sobre el cual se invoca a la primitiva
+*/
+
+void setMaterialMina (Mina &mina, std::string material);
+
+/**
+    PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado el material mediante setMateriaCaja().
+    POST: Se devuelve el material de la mina.
+    Mina: Instacia sobre el cual se invoca a la primitiva
+*/
+
+std::string getMaterialMina(Mina &mina);
+
+/**
+    PRE: La mina debe haber sido creada mediante crear().
+    POST: Se setea el contador de secuencia de la mina.
+    Mina: Instacia sobre el cual se invoca a la primitiva
+*/
+
+void setContadorSecuencia (Mina &mina, int contadorSecuencia);
+
+/**
+    PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado el contador de secuencia mediante setContadorSecuencia().
+    POST: Se devuelve la secuencia de la mina.
+    Mina: Instacia sobre el cual se invoca a la primitiva
+*/
+
+int getContadorSecuencia (Mina &mina);
 
 
 /**

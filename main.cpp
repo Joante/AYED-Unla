@@ -11,7 +11,7 @@
 #include <iostream>
 #include <math.h>
 #include <time.h>
-#include<cstdio>
+#include <cstdio>
 
 using namespace std;
 int colision(SDL_Rect H,SDL_Rect M)
@@ -63,7 +63,8 @@ int main(int argc, char** argv)
         Bandido bandido;
         Mina mina;
         int secuencia[2] = {2,4};
-        crearMina(mina, true,7,3,2,anchoCasillero,altoCasillero,secuencia,renderer);
+        crearMina(mina);
+        construirMina(mina,true,7,5,2,anchoCasillero,altoCasillero,secuencia,"Oro",renderer);
         CrearBandido(bandido,5,5,anchoCasillero,altoCasillero,renderer);
         crearLocomotora(locomotora,3,4,anchoCasillero,altoCasillero,renderer);
         crearVagon(vagon,3,3,anchoCasillero,altoCasillero,renderer); //aparece en el cuadrante 2,3
@@ -135,6 +136,26 @@ int main(int argc, char** argv)
                     dibujarTerreno(matrizTerreno[i][j],renderer);
                 }
             }
+            if(getEstadoMina(mina)){
+                int produccionMina = 1;
+                if (subIntervalo>1){
+                   produccionMina = getIntervaloProduccion(mina)%subIntervalo;
+                }
+                if(produccionMina==0){
+                    producirCaja(mina);
+                }
+
+                cout << "\nMaterial: ";
+                cout << getMaterialCaja(mina.cajas);
+                cout << "\nCapacidad Actual: ";
+                cout << mina.cajas.capActual;
+                cout << "\nCapacidad Maxima: ";
+                cout << mina.cajas.capMax << endl;
+                if(subIntervalo==2 || subIntervalo==4){
+                    system("pause");
+                }
+            }
+
             DibujarBandido(bandido,renderer);
             dibujarEstacion(estacion,renderer);
             dibujarLocomotora(locomotora,renderer);

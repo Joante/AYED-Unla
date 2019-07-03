@@ -1,16 +1,24 @@
+#include <iostream>
 #include "caja.h"
 #include <string>
+#include <iostream>
+ #include <cstdlib>
+
+using namespace std;
 
 
-
-void crearCaja(Caja &caja, std::string material, int secuenciaActual){
-    caja.material = material;
-    caja.capMax = secuenciaActual;
-    caja.capActual = caja.capMax;
+void crearCaja(Caja &caja){
+    caja.material = ' ';
+    caja.capMax = 0;
+    caja.capActual = 0;
 }
-
-void eliminarCaja(Caja *caja){
-    delete caja;
+void construirCaja (Caja &caja, std::string material, int capMax){
+    caja.material = material;
+    caja.capMax = capMax;
+    caja.capActual = capMax;
+}
+void eliminarCaja(Caja caja){
+//    delete caja;
 }
 
 void setMaterialCaja (Caja &caja, std::string material){
@@ -46,7 +54,7 @@ void restarMaterialCaja(Caja &caja, int cantMenos){
         aux-=cantMenos;
     }
     if (aux <= 0){
-        eliminarCaja(*caja);
+        eliminarCaja(caja);
     }
     else
         caja.capActual = aux;
