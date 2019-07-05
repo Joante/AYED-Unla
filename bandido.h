@@ -1,6 +1,10 @@
 #ifndef BANDIDO_H_INCLUDED
 #define BANDIDO_H _INCLUDED
-#include"SDL.h"
+#include "SDL.h"
+#include "Lista.h"
+#include "locomotora.h"
+#include "Vagon.h"
+
 /* falta agregar el .h de locomotora*/
 
 /** Definicion del tipo de dato para manejo de atributos:
@@ -23,10 +27,9 @@ typedef struct
     int posX;
     int posY;
     int areaDeAtaque;
-    int cantidadSolicitada;
-    int itemSolicitado;
-    int f;
-    int c;
+    int cantidadSolicitada; //aleatorio
+    Item itemSolicitado; //aleatorio
+    int tiempoDeVida; //aleatorio
     int anchoCasillero;
     int altoCasillero;
     SDL_Texture *imagen;
@@ -160,7 +163,7 @@ POST:devuelve el dato contenido en el campo itemSolicitado
 Bandido:Instancia sobre la cual se invoca la primitiva
 
 */
-int getItemSolicitado(Bandido &bandido);
+Item getItemSolicitado(Bandido &bandido);
 
 
 
@@ -173,7 +176,7 @@ POST:
     Bandido:Instancia sobre la cual se invoca la primitiva
 
 */
-Bandido& generarBandido(Bandido &Bandido);
+void generarBandido(Bandido &bandido, int areaDeAtaque, int anchoCasillero, int altoCasillero, int maxPermitido, int maxIntervalo, int maxVida, SDL_Renderer* renderer, int intervaloBandido);
 
 
 /**
@@ -187,16 +190,19 @@ POST:
 //void robaBandido(Bandido &bandido, Locomotora &locomotora );
 
 
-/**
- PRIMITIVAS DE SDL
-*/
+void dibujarBandido(Bandido &bandido, SDL_Renderer* renderer, bool hayBandido);
 
-void CrearBandido(Bandido &bandido, int f, int c, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
-void DibujarBandido(Bandido &bandido, SDL_Renderer* renderer);
-void DestruirBandida(Bandido &bandido);
+void crearBandido (Bandido &bandido, int areaDeAtaque, int anchoCasillero, int altoCasillero, int maxPermitido, int maxVida, int maxIntervalo, SDL_Renderer* renderer, bool &hayBandido, int intervaloBandido);
 
+void matarBandido (Bandido &bandido, int &intervalo, bool &hayBandido);
 
+void choqueBandido (Bandido &bandido, Lista *caravana, bool &hayBandido, int direccion);
 
+void robar(Bandido &bandido, bool &hayBandido, Lista *caravana);
+
+void robarCajas (Bandido &bandido, Vagon &vagon, Lista *caravana, bool &alcanzo);
+
+void eliminarVagon (Bandido &bandido, Lista *caravana);
 
 #endif // BANDIDO_H_INCLUDED
 

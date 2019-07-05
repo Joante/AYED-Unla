@@ -1,9 +1,3 @@
-/* TDA Lista
- * Implementación Simplemente Enlazada
- * Archivo : Lista.h
- * Versión : 1.1
- */
-
 #ifndef __LISTA_H__
 #define __LISTA_H__
 
@@ -23,11 +17,11 @@ enum ResultadoComparacion {
 };
 /* Tipo de Informacion que esta contenida en los Nodos de la
    Lista, identificada como Dato. */
-typedef int Dato;
+typedef void* PtrDato;
 
 /* Tipo de Estructura de los Nodos de la Lista. */
 struct NodoLista {
-    Dato dato; // dato almacenado
+    PtrDato ptrDato; // dato almacenado
     NodoLista* sgte; // puntero al siguiente
 };
 
@@ -35,10 +29,12 @@ struct NodoLista {
    la Lista y acceder a sus Datos. */
 typedef NodoLista* PtrNodoLista;
 
+typedef ResultadoComparacion (*PFComparacion)(PtrDato , PtrDato);
 
 /* Tipo de Estructura de la Lista */
 struct Lista{
     PtrNodoLista primero;      // puntero al primer nodo de la lista
+    PFComparacion compara;
 };
 
 
@@ -52,8 +48,18 @@ struct Lista{
 
   lista : estructura de datos a ser creado.
 */
-void crearLista(Lista &lista);
+void crearLista(Lista &lista, PFComparacion funcComparacion);
 
+/*----------------------------------------------------------------------------*/
+/*
+  pre : lista Creada con crearLista().
+  post: devuelve la representacion de lo Siguiente al último Nodo de la lista,
+        o sea el valor Null, que en esta implementacion representa el final de
+        la lista.
+
+  return: representación del fin de la lista.
+*/
+PtrNodoLista finLista();
 /*----------------------------------------------------------------------------*/
 /*
   pre : lista Creada con crearLista().
@@ -131,7 +137,7 @@ PtrNodoLista ultimo(Lista &lista);
   dato : elemento a adicionar al principio de la lista.
   return puntero al nodo adicionado.
 */
-PtrNodoLista adicionarPrincipio(Lista &lista, Dato dato);
+PtrNodoLista adicionarPrincipio(Lista &lista, PtrDato ptrDato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -147,7 +153,7 @@ PtrNodoLista adicionarPrincipio(Lista &lista, Dato dato);
   ptrNodo : puntero al nodo después del cual se quiere adicionar el dato.
   return puntero al nodo adicionado.
 */
-PtrNodoLista adicionarDespues(Lista &lista, Dato dato, PtrNodoLista ptrNodo);
+PtrNodoLista adicionarDespues(Lista &lista, PtrDato ptrDato, PtrNodoLista ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -159,7 +165,7 @@ PtrNodoLista adicionarDespues(Lista &lista, Dato dato, PtrNodoLista ptrNodo);
   dato : elemento a adicionar al final de la lista.
   return puntero al nodo adicionado.
 */
-PtrNodoLista adicionarFinal(Lista &lista, Dato dato);
+PtrNodoLista adicionarFinal(Lista &lista, PtrDato ptrDato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -174,29 +180,8 @@ PtrNodoLista adicionarFinal(Lista &lista, Dato dato);
   ptrNodo : puntero al nodo antes del cual se quiere adicionar el dato.
   return puntero al nodo adicionado.
 */
-PtrNodoLista adicionarAntes(Lista &lista, Dato dato, PtrNodoLista ptrNodo);
+PtrNodoLista adicionarAntes(Lista &lista, PtrDato ptrDato, PtrNodoLista ptrNodo);
 
-/*----------------------------------------------------------------------------*/
-/*
-  pre : lista creada con crearLista(), no vacia. ptrNodo es distinto de fin().
-  post: coloca el dato proporcionado en el nodo apuntado por ptrNodo.
-
-  lista : lista sobre la cual se invoca la primitiva.
-  dato : elemento a colocar.
-  ptrNodo : puntero al nodo del cual se quiere colocar el dato.
-*/
-void colocarDato(Lista &lista, Dato &dato, PtrNodoLista ptrNodo);
-
-/*----------------------------------------------------------------------------*/
-/*
-  pre : lista creada con crearLista(), no vacia. ptrNodo es distinto de fin().
-  post: devuelve el dato del nodo apuntado por ptrNodo.
-
-  lista : lista sobre la cual se invoca la primitiva.
-  dato : elemento obtenido.
-  ptrNodo : puntero al nodo del cual se quiere obtener el dato.
-*/
-void obtenerDato(Lista &lista, Dato &dato, PtrNodoLista ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -253,7 +238,7 @@ void eliminarLista(Lista &lista);
   dato : elemento a localizar.
   return puntero al nodo localizado o fin().
 */
-PtrNodoLista localizarDato(Lista &lista , Dato dato);
+PtrNodoLista localizarDato(Lista &lista , PtrDato ptrDato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -266,7 +251,7 @@ PtrNodoLista localizarDato(Lista &lista , Dato dato);
   dato : elemento a insertar.
   return puntero al nodo insertado.
 */
-PtrNodoLista insertarDato(Lista &lista, Dato dato);
+PtrNodoLista insertarDato(Lista &lista, PtrDato ptrDato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -276,7 +261,7 @@ PtrNodoLista insertarDato(Lista &lista, Dato dato);
   lista : lista sobre la cual se invoca la primitiva.
   dato : elemento a eliminar.
 */
-void eliminarDato(Lista &lista, Dato dato);
+void eliminarDato(Lista &lista, PtrDato ptrDato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -297,5 +282,4 @@ void reordenar(Lista &lista);
 int longitud(Lista &lista);
 
 #endif
-
 

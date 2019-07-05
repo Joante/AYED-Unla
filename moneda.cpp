@@ -1,37 +1,71 @@
-#include "moneda.h"
 #include <SDL.h>
 #include <SDL_image.h>
 #include <time.h>
-
+#include "moneda.h"
 #include <iostream>
 #include <cstdlib>
 #include <vector>
 #include <time.h>
-#include <iomanip>
+
 
 /* Implemanetación de las Primitivas */
 
-void crearMoneda(Moneda &moneda,int posX, int posY, int altoCasillero, int anchoCasillero,int altoVentana, int anchoVentana, SDL_Renderer* renderer){
-    moneda.posX=posX;
-    moneda.posY=posY;
+void generarMoneda(Moneda &moneda,int anchoCasillero,int altoCasillero,int maxVida,SDL_Renderer* renderer,int intervaloMoneda){
+
+    srand(time(NULL));
+    moneda.tiempoVida = (10 + rand() % (maxVida))+intervaloMoneda;
+    int y = 0 + rand() % (14 + 1);
+    int x = 0 + rand() % (19 + 1);
+    moneda.posY= y;//coordenada logica y
+    moneda.posX= x;//coordenada logica x
     moneda.imagen= IMG_LoadTexture(renderer,"img/moneda.png");
+    moneda.rectImag.y=y* altoCasillero;//coordenada de dibujo y
+    moneda.rectImag.x=x* anchoCasillero;//coordenada de dibujo x
     moneda.rectImag.w= anchoCasillero;//ancho
     moneda.rectImag.h= altoCasillero;//alto
-    moneda.rectImag.y=posY* altoCasillero;//coordenada de dibujo y
-    moneda.rectImag.x=posX* anchoCasillero;//coordenada de dibujo x
-    //Posicionamos aleatoriamente la moneda en la pantalla.
-   // moneda.rectImag.x = ((rand() % ((altoVentana-moneda.rectImag.w)/moneda.rectImag.w))*moneda.rectImag.w);
-   // moneda.rectImag.y = ((rand() % ((anchoVentana-moneda.rectImag.h)/moneda.rectImag.h))*moneda.rectImag.h);
-    moneda.tiempoVida=0;
 
 }
 
-void dibujar(Moneda &moneda, SDL_Renderer* renderer){
+
+void crearMoneda(Moneda &moneda,int anchoCasillero,int altoCasillero,int maxIntervalo, int maxVida, SDL_Renderer* renderer,int intervaloMoneda,bool &hayMoneda){
+
+ int aleatorio;
+ srand(time(NULL));
+
+    if (!hayMoneda)
+    {
+        if (intervaloMoneda >= maxIntervalo)
+        {
+            generarMoneda(moneda,anchoCasillero, altoCasillero, maxVida,renderer,intervaloMoneda);
+            hayMoneda = true;
+        }
+        else
+        {
+            aleatorio = 1 + rand() % (3);
+            if (aleatorio % 2 ==0)
+            {
+                generarMoneda(moneda,anchoCasillero, altoCasillero, maxIntervalo,renderer,intervaloMoneda);
+                hayMoneda = true;
+            }
+        }
+    }
+
+}
+
+
+void dibujarMoneda(Moneda &moneda, SDL_Renderer* renderer, bool hayMoneda){
+    if (hayMoneda)
     SDL_RenderCopy(renderer, moneda.imagen,NULL,&(moneda.rectImag));
 }
 
-void eliminarMoneda (Moneda &moneda){
+
+void eliminarMoneda (Moneda &moneda, int &intervalo, bool &hayMoneda){
+    if (moneda.tiempoVida==intervalo)
+    {
+    hayMoneda = false;
     SDL_DestroyTexture(moneda.imagen);
+    intervalo =0;
+    }
 }
 
 int getPosX (Moneda &moneda){
@@ -56,13 +90,6 @@ moneda.posX = posX;
 
 void setPosY (Moneda &moneda, int posY){
 moneda.posX = posY;
-}
-
-void generarMoneda (Moneda &moneda, int tiempoVida){
-
-    srand(time(NULL));
-    int a = rand()%tiempoVida;
-
 }
 
 

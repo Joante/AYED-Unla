@@ -1,7 +1,10 @@
 #include "caja.h"
 #include <string>
 
-
+void crear(Caja &caja, int secuenciaActual){
+    caja.capMax = secuenciaActual;
+    caja.capActual = caja.capMax;
+}
 
 void crear(Caja &caja, std::string contenido, int secuenciaActual){
     caja.contenido = contenido;
@@ -24,6 +27,11 @@ int getCapMax(Caja &caja){
 int getCapActual(Caja &caja){
     return caja.capActual;
 }
+
+void setCapActual(Caja &caja, int capActual){
+caja.capActual=capActual;
+}
+
 
 int restarContenido(Caja &caja, int menos){
     int aux = caja.capActual;

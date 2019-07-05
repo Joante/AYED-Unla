@@ -9,7 +9,7 @@ typedef struct{
     int capActual;      //Para utilizar luego al ser robado etc
 }Caja;
 
-
+void crear(Caja &caja, int secuenciaActual);
 /*
 Pre: no debe haber sido creada
 
@@ -71,6 +71,6 @@ se recomienda eliminar todas las cajas de capActual 0
 */
 int restarContenido(Caja &caja, int menos);
 
-
+void setCapActual(Caja &caja, int capActual);
 
 #endif // CAJA_H

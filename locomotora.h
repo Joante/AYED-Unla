@@ -1,9 +1,16 @@
 #include <iostream>
 #include <SDL.h>
 #include <SDL_image.h>
+#include "Lista.h"
+#include "Vagon.h"
+#include "mina.h"
+#include "Pila.h"
+#include "moneda.h"
+#include "estacion.h"
 #ifndef LOCOMOTORA_H_INCLUDED
 #define LOCOMOTORA_H_INCLUDED
-#include "Vagon.h"
+
+
 /*
 Definición del tipo Tipo de Dato para el manejo de la Locomotora.
 Atributos:
@@ -11,7 +18,7 @@ Atributos:
   int posX;
   int posY;
   int locomotoras;
-  ListaVagon listaVagones;
+  ListaVagonVagon listaVagones;
 
 Axiomas:
     posX debe tener un valor entre 0 y 600
@@ -32,8 +39,9 @@ typedef struct
     SDL_Texture *imagen;
     SDL_Rect rectImag;
 
+
 //falta la implementacion de lista para la lista de vagones
-}Locomotora;
+} Locomotora;
 
 
 /* Definición de Primitivas  */
@@ -90,9 +98,10 @@ void setDireccion (Locomotora &locomotora, int direccion);
 
 void setRectImag (Locomotora &locomotora, SDL_Rect imagen);
 
-void reubicarLocomotora(Locomotora &locomotora, Vagon &vagon);
+void reubicarLocomotora(Locomotora &locomotora);
 
-//ListaVagon getListaVagones (Locomotora &locomotora)-- falta implementacion de lista vagones
+
+//ListaVagonVagon getListaVagonVagones (Locomotora &locomotora)-- falta implementacion de lista vagones
 
 
 
@@ -102,7 +111,7 @@ void reubicarLocomotora(Locomotora &locomotora, Vagon &vagon);
    locomotora: Instacia sobre la cual se invoca a la primitiva.
    monedas: Valor pasado por parametro.*/
 
-//void setMonedas (Locomotora &locomotora, int tiempoVida);
+void setMonedas (Locomotora &locomotora, int monedas);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -131,9 +140,9 @@ void setPosY (Locomotora &locomotora, int posY);
 
 void setEstado (Locomotora &locomotora, bool estado);
 
+int getMonedas(Locomotora &locomotora);
 
-
-//void setListaVagones (ListaVagones lista, Locomotora &locomotora)-- falta implementacion de lista vagones
+//void setListaVagonVagones (ListaVagonVagones lista, Locomotora &locomotora)-- falta implementacion de lista vagones
 
 
 /* PRE: La locomotora debe haber sido creada mediante crear().
@@ -164,7 +173,7 @@ void colisionLimites (Locomotora &locomotora);
 /* PRE: La locomotora no debe haber sido creada.
    POST: La locomotora esta creada y lista para ser usada.
 */
-void crearLocomotora(Locomotora &locomotora, int f, int c, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
+void crearLocomotora(Locomotora &locomotora, int posY, int posX, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
 
 
 /* PRE: La locomotora debe haber sido creada mediante crearLocomotora().
@@ -194,9 +203,22 @@ void moverLocomotoraAAbajo(Locomotora &locomotora, SDL_Renderer* renderer, int i
 
 void moverLocomotoraAArriba(Locomotora &locomotora, SDL_Renderer* renderer, int intervalo);
 
+void chocarVagones (Locomotora &locomotora, Lista *caravana);
 
-void sumarMoneda (Locomotora &locomotora);
+void sumarMoneda (Locomotora &locomotora, bool &hayMoneda);
 
+int colisionVagones(SDL_Rect H, SDL_Rect M, int dir);
 
+void chocarBordes (Locomotora &locomotora, int direccion);
+
+void colisionMina (Locomotora &locomotora, Mina &mina, Lista *caravana, int &direccion);
+
+void detenerse(Locomotora &locomotora, int &direccion1);
+
+void sumarCaja(Locomotora &locomotora, Lista *caravana, Mina &mina);
+
+void colisionMinas (Locomotora &locomotora, Lista *minas, Lista *caravana, int &direccion);
+
+void colisionMoneda(Locomotora &locomotora, Moneda &moneda, bool &hayMoneda, int &monedas);
 
 #endif

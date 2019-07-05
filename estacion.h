@@ -1,6 +1,9 @@
 #ifndef ESTACION_H_INCLUDED
 #define ESTACION_H_INCLUDED
-#include"SDL.h"
+#include "SDL.h"
+#include "Vagon.h"
+#include "Lista.h"
+#include "Locomotora.h"
 /*
 Definición del tipo Tipo de Dato para el manejo de la Estación.
 Atributos:
@@ -24,7 +27,7 @@ typedef struct
     SDL_Texture *imagen;
     SDL_Rect rectImag;
 
-}Estacion;
+} Estacion;
 
 /* Definición de Primitivas  */
 
@@ -72,7 +75,9 @@ void setPosYE (Estacion &estacion, int posYE);
 
 /* ? */
 
-void agregarVagon ();
+void colisionEstacion (Estacion estacion,Locomotora &locomotora, Lista *caravana, int &direccion, SDL_Renderer* renderer);
+
+void agregarVagon (Estacion &estacion, Lista &caravana, SDL_Renderer* renderer);
 
 void crearEstacion(Estacion &Estacion, int posY, int posX, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
 

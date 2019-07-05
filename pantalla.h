@@ -1,7 +1,7 @@
 #ifndef PANTALLA_H_INCLUDED
 #define PANTALLA_H_INCLUDED
 #endif
-#import "Terreno.h"
+//#include "Terreno.h"
 ///*
 //Definición del tipo Tipo de Dato para el manejo de la Pantalla.
 //Atributos:

@@ -15,10 +15,16 @@ typedef struct
 //falta la implementacion de lista para la lista de vagones
 }Terreno;
 
+/* PRE: La matriz de Terreno no debe haber sido creada.
+   POST: La matriz Terreno esta creada y lista para ser usada.
+*/
+
+void crearMatrizTerreno(Terreno &terreno,Terreno matrizTerreno[15][20], int filas, int columnas, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer);
+
 /* PRE: La Terreno no debe haber sido creada.
    POST: La Terreno esta creada y lista para ser usada.
 */
-void crearTerreno(Terreno &terreno, int f, int c, int anchoCasillero, int altoCasillero, SDL_Renderer* renderer,int numero);
+void crearTerreno(Terreno &terreno, int f, int c,int anchoCasillero, int altoCasillero, SDL_Renderer* renderer,int numero);
 
 
 /* PRE: La Terreno debe haber sido creada mediante crearTerreno().
@@ -26,7 +32,9 @@ void crearTerreno(Terreno &terreno, int f, int c, int anchoCasillero, int altoCa
 
    Terreno: Instacia sobre la cual se invoca a la primitiva.
 */
-void dibujarTerreno(Terreno &terreno, SDL_Renderer* renderer);
+
+
+void dibujarTerreno(Terreno &terreno,Terreno matrizTerreno[15][20],int filas,int columnas, SDL_Renderer* renderer);
 
 
 /* PRE: La Terreno debe haber sido creada mediante crear().

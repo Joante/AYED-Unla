@@ -1,10 +1,11 @@
 #ifndef MINA_H_INCLUDED
 #define MINA_H_INCLUDED
 
-#include "ListaCajas.h"
-
 #include <SDL.h>
 #include <SDL_image.h>
+#include "Lista.h"
+#include "caja.h"
+#include "Vagon.h"
 /**
     Definición del tipo de Dato para el manejo de la mina.
     Atributos:
@@ -26,14 +27,17 @@ typedef struct Mina{
     int posX;
     int posY;
     int intervaloProduccion;
-    ListaCajas cajas;
-    int secuencia[];
+    Lista cajas;
+    int *secuencia;
     int anchoCasillero;
     int altoCasillero;
     SDL_Texture *imagen;
     SDL_Rect rectImag;
+    Item item;
 } Mina;
 
+
+ResultadoComparacion comparaListaCaja(PtrDato ptrDato1, PtrDato ptrDato2);
 /* Definición de Primitivas  */
 
 /**
@@ -41,7 +45,7 @@ typedef struct Mina{
     POST: La mina esta creada y listo para ser usada.
 */
 
-void crearMina (Mina &mina, bool estado,int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[],SDL_Renderer* renderer);
+void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduccion, int anchoCasillero, int altoCasillero, int secuencia[], Item item, SDL_Renderer* renderer);
 
 
 /**
@@ -127,7 +131,7 @@ void setIntervaloProduccion (Mina &mina, int intervaloProduccion);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-ListaCajas getListaCajas (Mina &mina);
+//ListaCajas getListaCajas (Mina &mina);
 
 
 /**
@@ -136,7 +140,7 @@ ListaCajas getListaCajas (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-void setListaCajas (Mina &mina, ListaCajas cajas);
+//void setListaCajas (Mina &mina, ListaCajas cajas);
 
 /**
     PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado la secuencia mediante setSecuencia().
@@ -144,7 +148,7 @@ void setListaCajas (Mina &mina, ListaCajas cajas);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-int * getSecuencia (Mina &mina);
+int* getSecuencia (Mina &mina);
 
 
 /**
@@ -161,7 +165,13 @@ void setSecuencia (Mina &mina, int* secuencia);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
+
 void dibujarMina(Mina &mina, SDL_Renderer* renderer);
 
+void dibujarMinas(Lista *mina, SDL_Renderer* renderer);
+
+void generarCajas(Mina &mina, int intervalo);
+
+void generarTodasLasCajas(Lista *mina, int intervalo);
 
 #endif // MINA_H_INCLUDED
