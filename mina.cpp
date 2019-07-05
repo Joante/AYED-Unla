@@ -136,3 +136,19 @@ void generarCajas(Mina &mina, int intervalo)
 
     }
 }
+
+void setAnchoCasilleroMina(Mina &mina, int anchoCasillero){
+    mina.anchoCasillero = anchoCasillero;
+}
+
+int getAnchoCasilleroMina(Mina &mina){
+    return mina.anchoCasillero;
+}
+
+void setAltoCasilleroMina(Mina &mina, int altoCasillero){
+    mina.altoCasillero = altoCasillero;
+}
+
+int getAltoCasilleroMina(Mina &mina){
+    return mina.altoCasillero;
+}

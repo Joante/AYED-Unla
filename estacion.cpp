@@ -144,3 +144,27 @@ void colisionEstacion (Estacion estacion,Locomotora &locomotora, Lista *caravana
     }
 
 }
+
+void setAnchoCasilleroEstacion(Estacion &estacion, int anchoCasillero){
+    estacion.anchoCasillero = anchoCasillero;
+}
+
+int getAnchoCasilleroEstacion(Estacion &estacion){
+    return estacion.anchoCasillero;
+}
+
+void setAltoCasilleroEstacion(Estacion &estacion, int altoCasillero){
+    estacion.altoCasillero = altoCasillero;
+}
+
+int getAltoCasilleroEstacion(Estacion &estacion){
+    return estacion.altoCasillero;
+}
+
+void setDireccionEstacion(Estacion &estacion, int dirreccion){
+    estacion.direccion = dirreccion;
+}
+
+int getDirreccionEstacion(Estacion &estacion){
+    return estacion.direccion;
+}

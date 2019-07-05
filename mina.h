@@ -17,6 +17,7 @@
         array secuencia
 
     Axiomas:
+        int intervalo produccion > 0;
 
 */
 
@@ -131,7 +132,7 @@ void setIntervaloProduccion (Mina &mina, int intervaloProduccion);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-//ListaCajas getListaCajas (Mina &mina);
+Lista getListaCajas (Mina &mina);
 
 
 /**
@@ -140,7 +141,7 @@ void setIntervaloProduccion (Mina &mina, int intervaloProduccion);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-//void setListaCajas (Mina &mina, ListaCajas cajas);
+void setListaCajas (Mina &mina, Lista cajas);
 
 /**
     PRE: La mina debe haber sido creada mediante crear(), y se debe de haber seteado la secuencia mediante setSecuencia().
@@ -164,14 +165,59 @@ void setSecuencia (Mina &mina, int* secuencia);
     POST: Se dibuja la mina.
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
-
-
 void dibujarMina(Mina &mina, SDL_Renderer* renderer);
 
+/**
+    PRE: Las minas debe haber sido creadas mediante crear().
+    POST: Se dibujan las minas.
+    Mina: Instacia sobre el cual se invoca a la primitiva
+*/
 void dibujarMinas(Lista *mina, SDL_Renderer* renderer);
 
+/**
+    PRE: La mina debe haber sido creada mediante crear().
+    POST: Se genera la caja de la mina.
+    Mina: Instacia sobre el cual se invoca a la primitiva
+*/
 void generarCajas(Mina &mina, int intervalo);
 
+/**
+    PRE: Las minas debe haber sido creadas mediante crear().
+    POST: Se generan las cajas de todas las minas.
+    Mina: Instacia sobre el cual se invoca a la primitiva
+*/
 void generarTodasLasCajas(Lista *mina, int intervalo);
+
+/**
+    PRE: La mina debe haber sido creada mediante crear().
+    POST: Se setea el ancho del casillero de la mina.
+
+    mina: Instacia sobre la cual se invoca a la primitiva.
+*/
+void setAnchoCasilleroMina(Mina &mina, int anchoCasillero);
+
+/**
+    PRE: La estación debe haber sido creada mediante crear().
+    POST: Se devuelve el ancho del casillero de la mina.
+
+    mina: Instacia sobre la cual se invoca a la primitiva.
+*/
+int getAnchoCasilleroMina(Mina &mina);
+
+/**
+    PRE: La estación debe haber sido creada mediante crear().
+    POST: Se setea el alto del casillero de la mina.
+
+    mina: Instacia sobre la cual se invoca a la primitiva.
+*/
+void setAltoCasilleroMina(Mina &mina, int altoCasillero);
+
+/**
+    PRE: La estación debe haber sido creada mediante crear().
+    POST: Se devuelve el alto del casillero de la mina.
+
+    mina: Instacia sobre la cual se invoca a la primitiva.
+*/
+int getAltoCasilleroMina(Mina &mina);
 
 #endif // MINA_H_INCLUDED

@@ -342,3 +342,40 @@ void eliminarVagon (Bandido &bandido, Lista *caravana)
         "No lo tenes, me llevo un vagon",
         NULL);
 }
+
+int getTiempoDeVidaBandido (Bandido &bandido){
+    return bandido.tiempoDeVida;
+}
+
+void setTiempoDeVidaBandido (Bandido &bandido, int tiempoDeVida){
+    bandido.tiempoDeVida = tiempoDeVida;
+}
+
+void setAnchoCasilleroBandido (Bandido &bandido, int anchoCasillero){
+    bandido.anchoCasillero = anchoCasillero;
+}
+
+int getAnchoCasilleroBandido (Bandido &bandido){
+    return bandido.anchoCasillero;
+}
+
+void setAltoCasilleroBandido (Bandido &bandido, int altoCasillero){
+    bandido.altoCasillero = altoCasillero;
+}
+
+int getAltoCasilleroBandido (Bandido &bandido){
+    return bandido.altoCasillero;
+}
+
+//void setImagenBandido (Bandido &bandido, SDL_Texture imagen){
+//}
+
+//SDL_Texture getImagenBandido (Bandido &bandido){
+//}
+
+void setRectBandido (Bandido &bandido, SDL_Rect rectImagen){
+}
+
+SDL_Rect getRectBandido (Bandido &bandido){
+    return bandido.rectImag;
+}

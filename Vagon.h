@@ -160,29 +160,63 @@ void crearVagon(Vagon &vagon, int posY, int posX, int anchoCasillero, int altoCa
 */
 void dibujarVagon(Vagon &vagon, SDL_Renderer* renderer);
 
+/**
+    Pre: El vagon debe de haber sido creado.
+    Post: Se devuelve la posicion X del vagon
+*/
+int getPosX(Vagon &vagon);
 
-/** PRE: La vagon debe haber sido creada mediante crear().
+/**
+    Pre: El vagon debe de haber sido creado.
+    Post: Se devuelve la posicion Y del vagon
+*/
+int getPosY(Vagon &vagon);
+
+/**
+    Pre: El vagon debe de haber sido creado y dibujado.
+    Post: Se mueve la posicion del vagon
+*/
+void moverVagon(Vagon &vagon,  SDL_Renderer* renderer, int intervalo);
+
+/**
+    Pre: El vagon debe de haber sido creado y dibujado.
+    Post: Se mueve la posicion del vagon a la derecha
+*/
+void moverVagonALaDerecha(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
+
+/**
+    Pre: El vagon debe de haber sido creado y dibujado.
+    Post: Se mueve la posicion del vagon a la izquierda
+*/
+void moverVagonALaIzquierda(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
+
+/**
+    Pre: El vagon debe de haber sido creado y dibujado.
+    Post: Se mueve la posicion del vagon abajo
+*/
+void moverVagonAAbajo(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
+
+/**
+    Pre: El vagon debe de haber sido creado y dibujado.
+    Post: Se mueve la posicion del vagon arriba
+*/
+void moverVagonAArriba(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
+
+/**
+    Pre: El vagon debe de haber sido creado y dibujado.
+    Post: Se reubica la posicion del vagon
+*/
+void reubicarVagon(Vagon &vagon);
+
+/** PRE: La vagon debe haber sido creada mediante crear() y dibujado.
    POST: La vagon es eliminada.
 
    vagon: Instacia sobre la cual se invoca a la primitiva */
-
-int getPosX(Vagon &vagon);
-
-int getPosY(Vagon &vagon);
-
-void moverVagon(Vagon &vagon,  SDL_Renderer* renderer, int intervalo);
-
-void moverVagonALaDerecha(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
-
-void moverVagonALaIzquierda(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
-
-void moverVagonAAbajo(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
-
-void moverVagonAArriba(Vagon &vagon, SDL_Renderer* renderer, int intervalo);
-
-void reubicarVagon(Vagon &vagon);
-
 void destruirVagon(Vagon &vagon);
 
+/**
+    Pre: El vagon debe de haber sido creado y dibujado.
+    Post: Se manejan los moviminetos del vagon
+*/
 void destellosVagon(Vagon vagon, SDL_Renderer* renderer);
 #endif // VAGON_H_INCLUDED

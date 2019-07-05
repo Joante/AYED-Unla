@@ -45,3 +45,11 @@ int restarContenido(Caja &caja, int menos){
         caja.capActual = aux;
     return aux;
 }
+
+void setContenido (Caja &caja, std::string material){
+    caja.contenido = material;
+}
+
+void setCapMax (Caja &caja, int capMax){
+    caja.capMax = capMax;
+}

@@ -5,20 +5,24 @@
 #define MONEDA_H_INCLUDED
 
 
-/*
-Definición del tipo Tipo de Dato para el manejo de la Moneda.
-Atributos:
-        *posX,
-        *posY,
-        *tiempoVida
+/**
+    Definición del tipo Tipo de Dato para el manejo de la Moneda.
+    Atributos:
+            *posX,
+            *posY,
+            *tiempoVida
+            int anchoCasillero;
+            int altoCasillero;
+            SDL_Texture *imagen;
+            SDL_Rect rectImag;
 
-Axiomas:
-        *posX se definirá mediante un aleatorio.
-        *posY se definirá mediante un aleatorio.
-        *tiempoVida se determina en forma aleatoria al momento de crearla y no podrá superar los VM intervalos.
+    Axiomas:
+            *posX se definirá mediante un aleatorio.
+            *posY se definirá mediante un aleatorio.
+            *tiempoVida se determina en forma aleatoria al momento de crearla y no podrá superar los VM intervalos.
 
 */
-/* Tipo de estructura de la Estación */
+/** Tipo de estructura de la Estación */
 
 typedef struct
 {
@@ -33,7 +37,7 @@ typedef struct
 
 }Moneda;
 
-/* Definición de Primitivas  */
+/** Definición de Primitivas  */
 
 /* PRE: La moneda no debe haber sido creada.
    POST: La moneda esta creada y lista para ser usada. */
@@ -106,7 +110,10 @@ void setPosY (Moneda &moneda, int posY);
 
 void generarMoneda(Moneda &moneda,int anchoCasillero,int altoCasillero,int maxIntervalo,SDL_Renderer* renderer,int intervaloMoneda);
 
-
+/**
+    Pre: La moneda debe de hacer sido creada mediante crear()
+    Post: La moneda es sumada.
+*/
 void sumarMoneda ();
 
 
