@@ -75,7 +75,7 @@ void setPosYE (Estacion &estacion, int posYE);
 
 /* ? */
 
-void colisionEstacion (Estacion estacion,Locomotora &locomotora, Lista *caravana, int &direccion, SDL_Renderer* renderer);
+void colisionEstacion (Estacion estacion,Locomotora &locomotora, Lista *caravana, int &direccion, SDL_Renderer* renderer, int &monedas);
 
 void agregarVagon (Estacion &estacion, Lista &caravana, SDL_Renderer* renderer);
 

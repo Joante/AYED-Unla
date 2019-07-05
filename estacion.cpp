@@ -110,7 +110,7 @@ void dibujarEstacion(Estacion &estacion, SDL_Renderer* renderer)
 }
 
 
-void colisionEstacion (Estacion estacion,Locomotora &locomotora, Lista *caravana, int &direccion, SDL_Renderer* renderer)
+void colisionEstacion (Estacion estacion,Locomotora &locomotora, Lista *caravana, int &direccion, SDL_Renderer* renderer, int &monedas)
 {
 
     int x = getPosX(locomotora);
@@ -141,6 +141,7 @@ void colisionEstacion (Estacion estacion,Locomotora &locomotora, Lista *caravana
     {
         agregarVagon(estacion, *caravana, renderer);
         detenerse(locomotora, direccion);
+        monedas =0;
     }
 
 }

@@ -14,7 +14,7 @@ void generarBandido(Bandido &bandido, int areaDeAtaque, int anchoCasillero, int 
     srand(time(NULL));
     //variable = limite_inferior + rand() % (limite_superior +1 - limite_inferior) ;
     bandido.cantidadSolicitada = 1 + rand() % (maxPermitido);
-    bandido.tiempoDeVida = (1 + rand() % (maxVida))+intervaloBandido;
+    bandido.tiempoDeVida = (10 + rand() % (maxVida))+intervaloBandido;
     int y = 0 + rand() % (14 + 1);
     int x = 0 + rand() % (19 + 1);
     bandido.posY= y;//coordenada logica y
@@ -31,34 +31,34 @@ void generarBandido(Bandido &bandido, int areaDeAtaque, int anchoCasillero, int 
 
     std::cout << "bandido: cantidad solicitada " << bandido.cantidadSolicitada << ", tiempo de vida " << bandido.tiempoDeVida <<std::endl;
 
-    bandido.itemSolicitado=plata;
-//    switch (item){
-//    case 1:
-//        bandido.itemSolicitado=oro;
-//        std::cout << "El bandido quiere: oro" << std::endl;
-//        break;
-//    case 2:
-//        bandido.itemSolicitado=plata;
-//        std::cout << "El bandido quiere: plata" << std::endl;
-//        break;
-//    case 3:
-//        bandido.itemSolicitado=platino;
-//        std::cout << "El bandido quiere: platino" << std::endl;
-//        break;
-//    case 4:
-//        bandido.itemSolicitado=roca;
-//        std::cout << "El bandido quiere: roca" << std::endl;
-//        break;
-//    case 5:
-//        bandido.itemSolicitado=bronce;
-//        std::cout << "El bandido quiere: bronce" << std::endl;
-//        break;
-//    case 6:
-//        bandido.itemSolicitado=carbon;
-//        std::cout << "El bandido quiere: carbon" << std::endl;
-//        break;
-//    }
-//    std::cout << "bandido: posicion x" << bandido.posX << ", posY " << bandido.posY << std::endl;
+
+    switch (item){
+    case 1:
+        bandido.itemSolicitado=oro;
+        std::cout << "El bandido quiere: oro" << std::endl;
+        break;
+    case 2:
+        bandido.itemSolicitado=plata;
+        std::cout << "El bandido quiere: plata" << std::endl;
+        break;
+    case 3:
+        bandido.itemSolicitado=platino;
+        std::cout << "El bandido quiere: platino" << std::endl;
+        break;
+    case 4:
+        bandido.itemSolicitado=roca;
+        std::cout << "El bandido quiere: roca" << std::endl;
+        break;
+    case 5:
+        bandido.itemSolicitado=bronce;
+        std::cout << "El bandido quiere: bronce" << std::endl;
+        break;
+    case 6:
+        bandido.itemSolicitado=carbon;
+        std::cout << "El bandido quiere: carbon" << std::endl;
+        break;
+    }
+    std::cout << "bandido: posicion x" << bandido.posX << ", posY " << bandido.posY << std::endl;
 }
 
 

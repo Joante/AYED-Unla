@@ -98,7 +98,7 @@ void reubicarVagon(Vagon &vagon)
     vagon.posX=vagon.rectImag.x/40;
     vagon.posY=vagon.rectImag.y/40;
 
-        std::cout << "Vagon: posx:" << vagon.posX << " posy: " << vagon.posY << std::endl;
+     //   std::cout << "Vagon: posx:" << vagon.posX << " posy: " << vagon.posY << std::endl;
  }
 
 void moverVagon(Vagon &vagon, SDL_Renderer* renderer, int intervalo)

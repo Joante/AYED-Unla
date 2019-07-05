@@ -62,6 +62,7 @@ void manejoDelTeclado (int &direccion, Locomotora &locomotora, bool &moverse)
         }
     }
 }
+
 void getTextoRectang(SDL_Renderer *renderer, int x, int y, char *texto,
                      TTF_Font *fuente, SDL_Texture **textura, SDL_Rect *rectangulo)
 {
@@ -81,20 +82,16 @@ void getTextoRectang(SDL_Renderer *renderer, int x, int y, char *texto,
 }
 
 
-void ganar (int orosT, int platasT, int broncesT, int platinosT, int rocasT, int carbonesT)
+void ganar (int orosT, int platasT, int broncesT, int platinosT, int rocasT, int carbonesT, bool &ganar)
 {
-    if (orosT<=0 && platasT<=0 && broncesT<=0 && platasT<=0 && rocasT<=0 && carbonesT<=0){
-
-        SDL_ShowSimpleMessageBox(
-                SDL_MESSAGEBOX_INFORMATION,
-                "GANASTE",
-                "INSERTE MUSICA DE FELIZ DOMINGO",
-                NULL);
+    if (orosT<=0 && platasT<=0 && broncesT<=0 && platinosT<=0 && rocasT<=0 && carbonesT<=0){
+      ganar=true;
     }
 
 }
 
-void actualizarItemComanda(Lista *carvana,int &oros, int &platas, int &bronces, int &platinos, int &rocas, int &carbones,int orosT, int platasT, int broncesT, int platinosT, int rocasT, int carbonesT)
+
+void actualizarItemComanda(Lista *carvana,int &oros, int &platas, int &bronces, int &platinos, int &rocas, int &carbones,int orosT, int platasT, int broncesT, int platinosT, int rocasT, int carbonesT, bool &ganarB)
 {
     int contadorOro=0;
     int contadorPlata=0;
@@ -165,57 +162,9 @@ void actualizarItemComanda(Lista *carvana,int &oros, int &platas, int &bronces, 
     else
         carbones=0;
 
-        ganar (oros, platas, bronces, platinos, rocas,  carbones);
+        ganar (oros, platas, bronces, platinos, rocas, carbones, ganarB);
 
 }
-
-
-
-
-//void actualizarItemComanda(Lista *carvana,int &oros, int &platas, int &bronces, int &platinos, int &rocas, int &carbones,int orosT, int platasT, int broncesT, int platinosT, int rocasT, int carbonesT)
-//{
-//    PtrNodoLista ptrLocomotora= primero(*carvana);
-//    PtrNodoLista ptrVagon=siguiente(*carvana,ptrLocomotora);
-//    while(ptrVagon!=finLista())
-//    {
-//        Vagon vagon= *(Vagon*)ptrVagon;
-//        Item itemVagon =getItem((*(Vagon*)ptrVagon->ptrDato));
-//        int pesoUtilizado= getPesoUtilizado((*(Vagon*)ptrVagon->ptrDato));
-////        cout << "Hola: " << pesoUtilizado << endl;
-//        if(itemVagon==oro && orosT!=oros-pesoUtilizado)
-//        {
-//            cout << "Hola: " << pesoUtilizado << endl;
-//            oros= oros - pesoUtilizado;
-//        }
-//        if(itemVagon==plata && platasT!=platas-pesoUtilizado)
-//        {
-//            cout << "Hola: " << pesoUtilizado << endl;
-//            platas= platas-pesoUtilizado;
-//        }
-//        if(itemVagon==bronce && broncesT!=bronces-pesoUtilizado)
-//        {
-//            cout << "Hola: " << pesoUtilizado << endl;
-//            bronces= bronces-pesoUtilizado;
-//        }
-//        if(itemVagon==platino && platinosT!=platinos-pesoUtilizado)
-//        {
-//            cout << "Hola: " << pesoUtilizado << endl;
-//            platinos= platinos -pesoUtilizado;
-//        }
-//        if(itemVagon==roca && rocasT!=rocas-pesoUtilizado)
-//        {
-//            cout << "Hola: " << pesoUtilizado << endl;
-//            rocas= rocas -pesoUtilizado;
-//        }
-//        if(itemVagon==carbon && carbonesT!=carbones-pesoUtilizado)
-//        {
-//            cout << "Hola: " << pesoUtilizado << endl;
-//            carbones= carbones - pesoUtilizado;
-//        }
-//
-//        ptrVagon=siguiente(*carvana,ptrVagon);
-//    }
-//}
 
 
 void actualizarComanda( char texto[100],int monedas,int oro,int plata,int bronce,int platino,int roca,int carbon,char comanda_monedas[2],char comanda_oro[2],char comanda_plata[2],char comanda_bronce[2],char comanda_platino[2],char comanda_roca[2],char comanda_carbon[2])
@@ -266,7 +215,7 @@ void actualizarComanda( char texto[100],int monedas,int oro,int plata,int bronce
     // Pasamos los puntos a la cadena de numeros, por aquello de reciclar variables
     sprintf(comanda_carbon,"%d",carbon);
     // volvemos a concatenar...
-    strcat(texto,comanda_roca);
+    strcat(texto,comanda_carbon);
 }
 
 int main(int argc, char** argv)
@@ -293,7 +242,7 @@ int main(int argc, char** argv)
 	IP: intervalos entre producciones de las minas.
 */
 
- int s = 20;
+ int s = 10;
  int p = 4;
  int a = 1;
  int posXE = 6;
@@ -321,16 +270,16 @@ int main(int argc, char** argv)
         SDL_Texture *textura;
         SDL_Rect rectangulo;
         TTF_Init();
-        TTF_Font *Fuente= TTF_OpenFont("fuente.ttf",20);
+        TTF_Font *Fuente= TTF_OpenFont("fuente.ttf",18);
         char texto[100];
         int monedas=0;
         //oro, plata, bronce, platino, roca, carbón.
-        int oros=1;
-        int platas=1;
-        int bronces=1;
-        int platinos=1;
-        int rocas=1;
-        int carbones=1;
+        int oros=10;
+        int platas=10;
+        int bronces=10;
+        int platinos=10;
+        int rocas=10;
+        int carbones=10;
         int orosTotal=oros;
         int platasTotal=platas;
         int broncesTotal=bronces;
@@ -346,7 +295,8 @@ int main(int argc, char** argv)
         char comanda_carbon[2];
         actualizarComanda(texto,monedas,oros,platas,bronces,platinos,rocas,carbones,comanda_monedas,comanda_oro,comanda_plata,comanda_bronce,comanda_platino,comanda_roca,
                           comanda_carbon);
-        getTextoRectang(renderer, 0, 0, texto, Fuente, &textura, &rectangulo);
+        int medio = (800 - rectangulo.w)/2;
+        getTextoRectang(renderer, 20, 0, texto, Fuente, &textura, &rectangulo);
         /** Inicializacion de TDA */
 
         /** Inicializacion de TDA */
@@ -397,6 +347,7 @@ int main(int argc, char** argv)
         int intervaloMina=1;
         int subIntervalo=0;
         bool moverse = true;
+        bool ganar = false;
         char titulo[255];
         bool hayBandido =false;
         bool hayMoneda=false;
@@ -421,7 +372,7 @@ int main(int argc, char** argv)
 
                     cambiarDireccion(caravana,direccion1);
                     reubicar(caravana);
-                    //crearBandido(bandido, a, anchoCasillero,altoCasillero,p, vb, ib, renderer, hayBandido,intervaloBandido);
+                    crearBandido(bandido, a, anchoCasillero,altoCasillero,p, vb, ib, renderer, hayBandido,intervaloBandido);
                     crearMoneda(moneda, anchoCasillero, altoCasillero, im, vm, renderer,intervaloMoneda,hayMoneda);
 
                     matarBandido(bandido, intervaloBandido, hayBandido);
@@ -445,7 +396,7 @@ int main(int argc, char** argv)
                 dibujarBandido(bandido, renderer, hayBandido);
                 dibujarEstacion(estacion,renderer);
                 dibujarMinas(&minas, renderer);
-                getTextoRectang(renderer, 0, 0, texto, Fuente, &textura, &rectangulo);
+                getTextoRectang(renderer, 25, 0, texto, Fuente, &textura, &rectangulo);
                 SDL_RenderCopy(renderer, textura, NULL, &rectangulo);
                 SDL_RenderPresent(renderer);
 
@@ -455,13 +406,13 @@ int main(int argc, char** argv)
                 /** Colisiones*/
                 if (subIntervalo==9)
                 {
-                    colisionEstacion(estacion, locomotora, &caravana, direccion1, renderer);
+                    colisionEstacion(estacion, locomotora, &caravana, direccion1, renderer, monedas);
                     chocarVagones (locomotora, &caravana);
                     chocarBordes (locomotora, direccion1);
                     choqueBandido(bandido, &caravana, hayBandido, direccion1);
                     colisionMinas(locomotora, &minas, &caravana, direccion1);
                     colisionMoneda(locomotora, moneda, hayMoneda, monedas);
-                    actualizarItemComanda(&caravana,oros,platas,bronces, platinos, rocas, carbones,orosTotal,platasTotal,broncesTotal, platinosTotal, rocasTotal, carbonesTotal);
+                    actualizarItemComanda(&caravana,oros,platas,bronces, platinos, rocas, carbones,orosTotal,platasTotal,broncesTotal, platinosTotal, rocasTotal, carbonesTotal, ganar);
                     actualizarComanda(texto,monedas,oros,platas,bronces,platinos,rocas,carbones,comanda_monedas,comanda_oro,comanda_plata,comanda_bronce,comanda_platino,comanda_roca,
                           comanda_carbon);
                 }
@@ -472,16 +423,25 @@ int main(int argc, char** argv)
 
                 //variable leída por archivo
                 SDL_Delay(s);
-            }
 
         }
 
-        SDL_ShowSimpleMessageBox(
-            SDL_MESSAGEBOX_INFORMATION,
-            "Fin del juego",
-            "perdiste :(",
-            NULL);
-
+        if(!ganar)
+        {
+            SDL_ShowSimpleMessageBox(
+                SDL_MESSAGEBOX_INFORMATION,
+                "Fin del juego",
+                "perdiste :(",
+                NULL);
+        }
+        else
+        {
+            SDL_ShowSimpleMessageBox(
+                SDL_MESSAGEBOX_INFORMATION,
+                "Fin del juego",
+                "Ganaste!",
+                NULL);
+        }
 
         destruirLocomotora(locomotora);
         SDL_DestroyRenderer(renderer);

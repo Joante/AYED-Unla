@@ -26,7 +26,7 @@ void crearMina (Mina &mina, bool estado, int posX, int posY, int intervaloProduc
     mina.secuencia=secuencia;
     mina.item=item;
 
-       char urlImagen[50];
+        char urlImagen[50];
         strcpy (urlImagen,"img/mina");
         char integer_string[5];
         sprintf(integer_string, "%d", item);
