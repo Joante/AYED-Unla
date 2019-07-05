@@ -255,3 +255,46 @@ void destellosVagon(Vagon vagon, SDL_Renderer* renderer)
     SDL_Delay(30);
 
 }
+
+
+void setPosX (Vagon &vagon, int posX){
+vagon.posX = posX;
+}
+
+void setPosY (Vagon &vagon, int posY){
+vagon.posX = posY;
+}
+
+void setAnchoCasilleroVagon(Vagon &vagon, int anchoCasillero){
+    vagon.anchoCasillero = anchoCasillero;
+}
+
+int getAnchoCasilleroVagon(Vagon &vagon){
+    return vagon.anchoCasillero;
+}
+
+void setAltoCasilleroVagon(Vagon &vagon, int altoCasillero){
+    vagon.altoCasillero = altoCasillero;
+}
+
+int getAltoCasilleroVagon(Vagon &vagon){
+    return vagon.altoCasillero;
+}
+void setMonedas (Vagon &vagon, int monedas)
+{
+    vagon.monedas=monedas;
+}
+
+int getMonedas(Vagon &vagon)
+{
+    return vagon.monedas;
+}
+int getDireccionSiguiente(Vagon &vagon)
+{
+    return vagon.direccionSiguiente;
+}
+
+void setDireccionSiguiente(Vagon &vagon, int direccionSiguiente)
+{
+    vagon.direccionSiguiente=direccionSiguiente;
+}

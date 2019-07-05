@@ -92,4 +92,20 @@ void setPosY (Moneda &moneda, int posY){
 moneda.posX = posY;
 }
 
+void setAnchoCasilleroMoneda(Moneda &moneda, int anchoCasillero){
+    moneda.anchoCasillero = anchoCasillero;
+}
+
+int getAnchoCasilleroMoneda(Moneda &moneda){
+    return moneda.anchoCasillero;
+}
+
+void setAltoCasilleroMoneda(Moneda &moneda, int altoCasillero){
+    moneda.altoCasillero = altoCasillero;
+}
+
+int getAltoCasilleroMoneda(Moneda &moneda){
+    return moneda.altoCasillero;
+}
+
 

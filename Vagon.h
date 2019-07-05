@@ -219,4 +219,81 @@ void destruirVagon(Vagon &vagon);
     Post: Se manejan los moviminetos del vagon
 */
 void destellosVagon(Vagon vagon, SDL_Renderer* renderer);
+
+/* PRE: La vagon debe haber sido creada mediante crear().
+   POST: El campo posX de la vagon se modifica por el valor pasado por parametro.
+
+   vagon: Instacia sobre la cual se invoca a la primitiva.
+   posX: Valor pasado por parametro. Nueva posicion en X. */
+
+
+void setPosX (Vagon &vagon, int posX);
+
+/* PRE: La vagon debe haber sido creada mediante crear().
+   POST: El campo posY de la vagon se modifica por el valor pasado por parametro.
+
+   vagon: Instacia sobre la cual se invoca a la primitiva.
+   posY: Valor pasado por parametro. Nueva posicion en Y. */
+
+void setPosY (Vagon &vagon, int posY);
+
+/**
+    PRE: La vagon debe haber sido creada mediante crear().
+    POST: Se setea el ancho del casillero de la vagon.
+
+    vagon: Instacia sobre la cual se invoca a la primitiva.
+*/
+void setAnchoCasilleroVagon(Vagon &vagon, int anchoCasillero);
+
+/**
+    PRE: La vagon debe haber sido creada mediante crear().
+    POST: Se devuelve el ancho del casillero de la vagon.
+
+    vagon: Instacia sobre la cual se invoca a la primitiva.
+*/
+int getAnchoCasilleroVagon(Vagon &vagon);
+
+/**
+    PRE: La vagon debe haber sido creada mediante crear().
+    POST: Se setea el alto del casillero de la vagon.
+
+    vagon: Instacia sobre la cual se invoca a la primitiva.
+*/
+void setAltoCasilleroVagon(Vagon &vagon, int altoCasillero);
+
+/**
+    PRE: La vagon debe haber sido creada mediante crear().
+    POST: Se devuelve el alto del casillero de la vagon.
+
+    vagon: Instacia sobre la cual se invoca a la primitiva.
+*/
+int getAltoCasilleroVagon(Vagon &vagon);
+
+/**
+    PRE: La vagon debe haber sido creada mediante crear().
+    POST: El campo monedas de la vagon se modifica por el valor pasado por parametro.
+
+    vagon: Instacia sobre la cual se invoca a la primitiva.
+    monedas: Valor pasado por parametro.
+*/
+
+void setMonedas (Vagon &vagon, int monedas);
+
+/**
+    PRE: La vagon debe haber sido creada mediante crear().
+    POST: Se devuelve las monedas de la vagon.
+
+    vagon: Instacia sobre la cual se invoca a la primitiva
+*/
+int getMonedas(Vagon &vagon);
+
+/** PRE: Vagon creado con crearVagon()
+    POST: Delvuelve el dato contenido en el campo  direccion siguiente
+*/
+int getDireccionSiguiente(Vagon &vagon);
+
+/** PRE: Vagon creado con crearVagon()
+    POST: El campo direccion siguiente pasa a tener el dato ingresado
+*/
+void setDireccionSiguiente(Vagon &vagon, int direccionSiguiente);
 #endif // VAGON_H_INCLUDED

@@ -75,3 +75,42 @@ void destruirTerreno(Terreno &terreno){
     SDL_DestroyTexture(terreno.imagen);
 }
 
+void setPosX (Terreno &terreno, int posX){
+terreno.posX = posX;
+}
+
+void setPosY (Terreno &terreno, int posY){
+terreno.posX = posY;
+}
+
+void setAnchoCasilleroTerreno(Terreno &terreno, int anchoCasillero){
+    terreno.anchoCasillero = anchoCasillero;
+}
+
+int getAnchoCasilleroTerreno(Terreno &terreno){
+    return terreno.anchoCasillero;
+}
+
+void setAltoCasilleroTerreno(Terreno &terreno, int altoCasillero){
+    terreno.altoCasillero = altoCasillero;
+}
+
+int getAltoCasilleroTerreno(Terreno &terreno){
+    return terreno.altoCasillero;
+}
+int getPosX (Terreno &terreno){
+    return terreno.posX;
+}
+
+int getPosY (Terreno &terreno){
+    return terreno.posY;
+}
+
+bool getEstado (Terreno &terreno){
+    return terreno.estado;
+}
+
+void setEstado (Terreno &terreno, bool estado){
+    terreno.estado=estado;
+}
+

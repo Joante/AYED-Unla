@@ -1213,7 +1213,7 @@
 	"moneda.h"
 	"estacion.h"
 
-1562347535 c:\users\joateich\documents\ayed-unla\vagon.h
+1562358238 c:\users\joateich\documents\ayed-unla\vagon.h
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -1221,7 +1221,7 @@
 
 1562332421 c:\users\joateich\documents\ayed-unla\pila.h
 
-1562349129 c:\users\joateich\documents\ayed-unla\mina.h
+1562367014 c:\users\joateich\documents\ayed-unla\mina.h
 	<SDL.h>
 	<SDL_image.h>
 	"Lista.h"
@@ -1231,7 +1231,7 @@
 1562337546 c:\users\joateich\documents\ayed-unla\caja.h
 	<string>
 
-1562347352 c:\users\joateich\documents\ayed-unla\moneda.h
+1562367086 c:\users\joateich\documents\ayed-unla\moneda.h
 	<SDL.h>
 	<SDL_image.h>
 
@@ -1291,7 +1291,7 @@
 	<math.h>
 	"caravana.h"
 
-1562332546 c:\users\joateich\documents\ayed-unla\terreno.h
+1562357736 c:\users\joateich\documents\ayed-unla\terreno.h
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -1307,7 +1307,7 @@
 	"locomotora.h"
 	"Pila.h"
 
-1562332546 source:c:\users\joateich\documents\ayed-unla\moneda.cpp
+1562367129 source:c:\users\joateich\documents\ayed-unla\moneda.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<time.h>
@@ -1323,7 +1323,7 @@
 	<SDL.h>
 	<SDL_image.h>
 
-1562332546 source:c:\users\joateich\documents\ayed-unla\terreno.cpp
+1562357831 source:c:\users\joateich\documents\ayed-unla\terreno.cpp
 	"terreno.h"
 	<iostream>
 	<SDL.h>
@@ -1346,7 +1346,7 @@
 1562332421 source:c:\users\joateich\documents\ayed-unla\pila.cpp
 	"Pila.h"
 
-1562334312 source:c:\users\joateich\documents\ayed-unla\mina.cpp
+1562349183 source:c:\users\joateich\documents\ayed-unla\mina.cpp
 	"mina.h"
 	<iostream>
 	<SDL.h>

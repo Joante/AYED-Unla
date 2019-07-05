@@ -197,7 +197,7 @@ void generarTodasLasCajas(Lista *mina, int intervalo);
 void setAnchoCasilleroMina(Mina &mina, int anchoCasillero);
 
 /**
-    PRE: La estación debe haber sido creada mediante crear().
+    PRE: La mina debe haber sido creada mediante crear().
     POST: Se devuelve el ancho del casillero de la mina.
 
     mina: Instacia sobre la cual se invoca a la primitiva.
@@ -205,7 +205,7 @@ void setAnchoCasilleroMina(Mina &mina, int anchoCasillero);
 int getAnchoCasilleroMina(Mina &mina);
 
 /**
-    PRE: La estación debe haber sido creada mediante crear().
+    PRE: La mina debe haber sido creada mediante crear().
     POST: Se setea el alto del casillero de la mina.
 
     mina: Instacia sobre la cual se invoca a la primitiva.
@@ -213,7 +213,7 @@ int getAnchoCasilleroMina(Mina &mina);
 void setAltoCasilleroMina(Mina &mina, int altoCasillero);
 
 /**
-    PRE: La estación debe haber sido creada mediante crear().
+    PRE: La mina debe haber sido creada mediante crear().
     POST: Se devuelve el alto del casillero de la mina.
 
     mina: Instacia sobre la cual se invoca a la primitiva.

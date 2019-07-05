@@ -19,7 +19,7 @@
     Axiomas:
             *posX se definirá mediante un aleatorio.
             *posY se definirá mediante un aleatorio.
-            *tiempoVida se determina en forma aleatoria al momento de crearla y no podrá superar los VM intervalos.
+            *tiempoVida se determoneda en forma aleatoria al momento de crearla y no podrá superar los VM intervalos.
 
 */
 /** Tipo de estructura de la Estación */
@@ -49,7 +49,7 @@ void crearMoneda(Moneda &moneda,int anchoCasillero,int altoCasillero,int maxInte
 void dibujarMoneda(Moneda &moneda, SDL_Renderer* renderer, bool hayMoneda);
 
 /* PRE: La moneda debe haber sido creada mediante crear().
-   POST: La moneda es eliminada.
+   POST: La moneda es elimonedada.
 
    moneda: Instacia sobre la cual se invoca a la primitiva */
 
@@ -116,6 +116,37 @@ void generarMoneda(Moneda &moneda,int anchoCasillero,int altoCasillero,int maxIn
 */
 void sumarMoneda ();
 
+/**
+    PRE: La moneda debe haber sido creada mediante crear().
+    POST: Se setea el ancho del casillero de la moneda.
+
+    moneda: Instacia sobre la cual se invoca a la primitiva.
+*/
+void setAnchoCasilleroMoneda(Moneda &moneda, int anchoCasillero);
+
+/**
+    PRE: La moneda debe haber sido creada mediante crear().
+    POST: Se devuelve el ancho del casillero de la moneda.
+
+    moneda: Instacia sobre la cual se invoca a la primitiva.
+*/
+int getAnchoCasilleroMoneda(Moneda &moneda);
+
+/**
+    PRE: La moneda debe haber sido creada mediante crear().
+    POST: Se setea el alto del casillero de la moneda.
+
+    moneda: Instacia sobre la cual se invoca a la primitiva.
+*/
+void setAltoCasilleroMoneda(Moneda &moneda, int altoCasillero);
+
+/**
+    PRE: La moneda debe haber sido creada mediante crear().
+    POST: Se devuelve el alto del casillero de la moneda.
+
+    moneda: Instacia sobre la cual se invoca a la primitiva.
+*/
+int getAltoCasilleroMoneda(Moneda &moneda);
 
 
 #endif
