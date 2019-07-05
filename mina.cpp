@@ -3,7 +3,6 @@
 #include <iostream>
 #include <SDL.h>
 #include <SDL_image.h>
-
 using namespace std;
 
 void crearMina (Mina &mina){
@@ -23,6 +22,7 @@ void construirMina(Mina &mina, bool estado, int posX, int posY, int intervaloPro
     mina.material = material;
     mina.contadorSecuencia = 0;
     mina.estado=estado;
+    crearPila(mina.cajas);
 }
 
 void dibujarMina(Mina &mina, SDL_Renderer* renderer){
@@ -66,13 +66,19 @@ void setIntervaloProduccion (Mina &mina, int intervaloProduccion){
     mina.intervaloProduccion = intervaloProduccion;
 }
 
-Caja getPilaCajas (Mina &mina){
+Pila getPilaCajas (Mina &mina){
     return mina.cajas;
 }
+/*Caja getPilaCajas (Mina &mina){
+    return mina.cajas;
+}*/
 
-void setPilaCajas (Mina &mina, Caja cajas){
+void setPilaCajas (Mina &mina, Pila cajas){
     mina.cajas = cajas;
 }
+/*void setPilaCajas (Mina &mina, Caja cajas){
+    mina.cajas = cajas;
+}*/
 
 int * getSecuencia (Mina &mina){
     return mina.secuencia;
@@ -95,12 +101,12 @@ std::string getMaterialMina(Mina &mina){
 void producirCaja (Mina &mina){
     Caja* caja = new Caja;
     construirCaja(*caja,getMaterialMina(mina), mina.secuencia[mina.contadorSecuencia]);
-    //push(mina.cajas, caja);
-    if(mina.contadorSecuencia < 2){
-        mina.contadorSecuencia++;
-    }else {
+    agregar(mina.cajas, caja);
+    if(mina.contadorSecuencia == 1){
         mina.contadorSecuencia=0;
+    }else {
+        mina.contadorSecuencia++;
     }
-    mina.cajas = *caja;
+    //mina.cajas = *caja;
 }
 

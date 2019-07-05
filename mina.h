@@ -14,7 +14,7 @@
         int posX
         int posY
         int intervaloProduccion
-        lista<Caja> cajas
+        Pila<Caja> cajas
         array secuencia
 
     Axiomas:
@@ -28,8 +28,8 @@ typedef struct Mina{
     int posX;
     int posY;
     int intervaloProduccion;
-    //Pila cajas;
-    Caja cajas;
+    Pila cajas;
+    //Caja cajas;
     int secuencia[2];
     int anchoCasillero;
     int altoCasillero;
@@ -137,8 +137,9 @@ void setIntervaloProduccion (Mina &mina, int intervaloProduccion);
     POST: Se devuelve la ListaCajas de la mina.
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
+Pila getPilaCajas (Mina &mina);
 
-Caja getPilaCajas (Mina &mina);
+//Caja getPilaCajas (Mina &mina);
 
 /**
     PRE: La mina debe haber sido creada mediante crear().
@@ -146,7 +147,8 @@ Caja getPilaCajas (Mina &mina);
     Mina: Instacia sobre el cual se invoca a la primitiva
 */
 
-void setPilaCajas (Mina &mina, Caja cajas);
+void setPilaCajas (Mina &mina, Pila cajas);
+//void setPilaCajas (Mina &mina, Caja cajas);
 
 
 /**

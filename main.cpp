@@ -12,7 +12,9 @@
 #include <math.h>
 #include <time.h>
 #include <cstdio>
-
+/**
+    Crear funcion para recorrer la lista de minas y producir las cajas para cada una.
+*/
 using namespace std;
 int colision(SDL_Rect H,SDL_Rect M)
 {
@@ -72,6 +74,7 @@ int main(int argc, char** argv)
         crearMoneda(moneda,6,6,anchoCasillero,altoCasillero,altoVentana,anchoVentana,renderer);
         int direccion1=2;
         int subIntervalo=0;
+        int subIntervaloPrd = 0;
 
         //TERRENO
 
@@ -124,6 +127,9 @@ int main(int argc, char** argv)
             {
                 subIntervalo=0;
             }
+            if (subIntervaloPrd==101){
+                subIntervaloPrd=0;
+            }
 
             SDL_RenderClear(renderer);
             cout << " dibujo \n";
@@ -139,19 +145,34 @@ int main(int argc, char** argv)
             if(getEstadoMina(mina)){
                 int produccionMina = 1;
                 if (subIntervalo>1){
-                   produccionMina = getIntervaloProduccion(mina)%subIntervalo;
+                   produccionMina = subIntervalo%getIntervaloProduccion(mina);
                 }
                 if(produccionMina==0){
                     producirCaja(mina);
                 }
-
-                cout << "\nMaterial: ";
-                cout << getMaterialCaja(mina.cajas);
-                cout << "\nCapacidad Actual: ";
-                cout << mina.cajas.capActual;
-                cout << "\nCapacidad Maxima: ";
-                cout << mina.cajas.capMax << endl;
-                if(subIntervalo==2 || subIntervalo==4){
+                if(subIntervalo==9){
+                    int contador = 0;
+                    Pila aux;
+                    crearPila(aux);
+                    while(!pilaVacia(mina.cajas)){
+                        Caja* caja = new Caja;
+                        caja = (Caja*)sacar(mina.cajas);
+                        agregar(aux,caja);
+                        contador ++ ;
+                    }
+                    while(!pilaVacia(aux)){
+                        Caja* caja = new Caja;
+                        caja = (Caja*)sacar(aux);
+                        cout << "Material caja: ";
+                        cout << caja->material << endl;
+                        cout << "Capacidad Actual caja: ";
+                        cout << caja->capActual << endl;
+                        cout << "Capacidad Maxima caja: ";
+                        cout << caja->capMax << endl;
+                        agregar(mina.cajas,caja);
+                    }
+                    cout << "Contador cajas: ";
+                    cout << contador << endl;
                     system("pause");
                 }
             }
@@ -192,6 +213,7 @@ int main(int argc, char** argv)
 //                       }
             cout << subIntervalo;
             subIntervalo++;
+            subIntervaloPrd++;
             SDL_Delay(300);
             puntos++;
             SDL_SetWindowTitle ( window ,titulo);
